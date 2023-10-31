@@ -54,6 +54,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(1134, 150);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // codigo
             // 
@@ -165,7 +166,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1145, 320);
+            ClientSize = new Size(1194, 320);
             Controls.Add(btn_Excluir);
             Controls.Add(btn_Voltar);
             Controls.Add(btn_Alterar_Dados);

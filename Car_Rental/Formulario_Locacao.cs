@@ -1,13 +1,6 @@
 ﻿using Npgsql;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Globalization;
 
 namespace Car_Rental
 {
@@ -45,7 +38,8 @@ namespace Car_Rental
                 txt_Veiculo.Text = dt.Rows[0]["veiculo_escolhido"].ToString();
                 txt_Nome_Cliente.Text = dt.Rows[0]["nome_cliente"].ToString();
                 txt_Seguro_Opcional.Text = dt.Rows[0]["seguro_opcional"].ToString();
-                mktxt_Inicio_Locacao.Text = dt.Rows[0]["inicio_locacao"].ToString();
+                maskedTextBox1.Text = dt.Rows[0]["inicio_locacao"].ToString();
+                
                 mktxt_Termino_Locacao.Text = dt.Rows[0]["termino_locacao"].ToString();
                 mktxt_Valor_Diaria.Text = dt.Rows[0]["valor_da_diaria"].ToString();
                 mktxt_Valor_Total.Text = dt.Rows[0]["valor_total"].ToString();
@@ -57,14 +51,7 @@ namespace Car_Rental
                 MessageBox.Show("Erro ao Pesquisar locacao: " + erro.Message);
             }
 
-
         }
-
-        private void mkTxt_Inicio_Locacao_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -75,7 +62,7 @@ namespace Car_Rental
             txt_Veiculo.Text = "";
             txt_Nome_Cliente.Text = "";
             txt_Seguro_Opcional.Text = "";
-            mktxt_Inicio_Locacao.Text = "";
+            maskedTextBox1.Text = "";
             mktxt_Termino_Locacao.Text = "";
             mktxt_Valor_Diaria.Text = "";
             mktxt_Valor_Total.Text = "";
@@ -91,17 +78,33 @@ namespace Car_Rental
             // objeto de conexao
             NpgsqlConnection con = new NpgsqlConnection(stringConexao);
 
+            DateTime dataInicio;
+            bool sucesso = DateTime.TryParseExact(maskedTextBox1.Text, "ddMMyyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dataInicio);
+
+            if (sucesso == false)
+            {
+                // A string não pôde ser convertida para DateTime.
+            }
+
+            DateTime dataTermino;
+            bool correto = DateTime.TryParseExact(maskedTextBox1.Text, "ddMMyyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dataTermino);
+
+            if (correto == false)
+            {
+                // A string não pôde ser convertida para DateTime.
+            }
+
             // instrucao sql para o banco de dados
             string instrucao = "insert into  locacao ( veiculo_escolhido,seguro_opcional,nome_cliente,valor_da_diaria,valor_total,inicio_locacao,termino_locacao,placa_veiculo) " +
                 "values ('" + txt_Veiculo.Text + "','" + txt_Seguro_Opcional.Text + "','" + txt_Nome_Cliente.Text + "'," +
-                "'" + mktxt_Valor_Diaria.Text + "','" + mktxt_Valor_Total.Text + "','" + mktxt_Inicio_Locacao.Text + "'," +
-                "'" + mktxt_Termino_Locacao.Text + "','" + mktxt_Placa.Text + "'); ";
+                "'" + mktxt_Valor_Diaria.Text + "','" + mktxt_Valor_Total.Text + "','" + dataInicio.ToShortDateString() + "'," +
+                "'" + dataTermino.ToShortDateString() + "','" + mktxt_Placa.Text + "'); ";
 
             if (CodigoLocacao > 0)
             {
-                instrucao = $"update locacao set veiculo_escolhido  = '{txt_Veiculo.Text}', seguro_opcional = '{txt_Seguro_Opcional.Text}'," +
+                instrucao = $"update locacao set codigo  = '{txt_Veiculo.Text}', seguro_opcional = '{txt_Seguro_Opcional.Text}'," +
                     $" nome_cliente = '{txt_Nome_Cliente.Text}' , valor_da_diaria = '{mktxt_Valor_Diaria.Text}' , valor_total = '{mktxt_Valor_Total}'" +
-                    $" inicio_locacao = '{mktxt_Inicio_Locacao.Text}', termino_locacao = '{mktxt_Termino_Locacao.Text}', placa_veiculo{mktxt_Placa.Text}'" +
+                    $" inicio_locacao = '{maskedTextBox1}', termino_locacao = '{mktxt_Termino_Locacao.Text}', placa_veiculo{mktxt_Placa.Text}'" +
                     $" where codigo = {CodigoLocacao}";
             }
             NpgsqlCommand cmd = new NpgsqlCommand(instrucao, con);
@@ -133,6 +136,11 @@ namespace Car_Rental
             {
                 AlterarRegistro();
             }
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

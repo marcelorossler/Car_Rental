@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
 
+
 namespace Car_Rental
 {
     public partial class financeiro : Form
@@ -25,8 +26,7 @@ namespace Car_Rental
 
         private void btn_Veiculo_Click(object sender, EventArgs e)
         {
-            Formulario_Consultas form = new Formulario_Consultas();
-            form.ShowDialog();
+
         }
 
         private void financeiro_Load(object sender, EventArgs e)
@@ -55,6 +55,13 @@ namespace Car_Rental
             con.Dispose();
 
             dataGridView1.DataSource = dt; // carrega na lista da tela
+        }
+
+
+        private void Consulta()
+        {
+
+
         }
     }
 

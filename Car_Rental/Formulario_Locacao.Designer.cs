@@ -40,13 +40,13 @@
             lbl_Nome_Cliente = new Label();
             lbl_Inicio_Locacao = new Label();
             lbl_Valor_Diaria = new Label();
-            mktxt_Inicio_Locacao = new MaskedTextBox();
             mktxt_Termino_Locacao = new MaskedTextBox();
             mktxt_Valor_Diaria = new MaskedTextBox();
             lbl_Valor_Total = new Label();
             mktxt_Valor_Total = new MaskedTextBox();
             mktxt_Placa = new MaskedTextBox();
             lbl_Placa = new Label();
+            maskedTextBox1 = new MaskedTextBox();
             SuspendLayout();
             // 
             // btn_Voltar
@@ -108,7 +108,7 @@
             lbl_Termino_Locacao.Name = "lbl_Termino_Locacao";
             lbl_Termino_Locacao.Size = new Size(113, 15);
             lbl_Termino_Locacao.TabIndex = 16;
-            lbl_Termino_Locacao.Text = "Termino da Locacao";
+            lbl_Termino_Locacao.Text = "Término da Locação";
             // 
             // txt_Seguro_Opcional
             // 
@@ -149,7 +149,7 @@
             lbl_Inicio_Locacao.Name = "lbl_Inicio_Locacao";
             lbl_Inicio_Locacao.Size = new Size(99, 15);
             lbl_Inicio_Locacao.TabIndex = 22;
-            lbl_Inicio_Locacao.Text = "Início da Locacao";
+            lbl_Inicio_Locacao.Text = "Início da Locacão";
             // 
             // lbl_Valor_Diaria
             // 
@@ -160,22 +160,12 @@
             lbl_Valor_Diaria.TabIndex = 25;
             lbl_Valor_Diaria.Text = "Valor da Diária";
             // 
-            // mktxt_Inicio_Locacao
-            // 
-            mktxt_Inicio_Locacao.Location = new Point(17, 179);
-            mktxt_Inicio_Locacao.Mask = "00/00/0000 90:00";
-            mktxt_Inicio_Locacao.Name = "mktxt_Inicio_Locacao";
-            mktxt_Inicio_Locacao.Size = new Size(87, 23);
-            mktxt_Inicio_Locacao.TabIndex = 28;
-            mktxt_Inicio_Locacao.ValidatingType = typeof(DateTime);
-            mktxt_Inicio_Locacao.MaskInputRejected += mkTxt_Inicio_Locacao_MaskInputRejected;
-            // 
             // mktxt_Termino_Locacao
             // 
             mktxt_Termino_Locacao.Location = new Point(308, 179);
-            mktxt_Termino_Locacao.Mask = "00/00/0000 90:00";
+            mktxt_Termino_Locacao.Mask = "00/00/0000";
             mktxt_Termino_Locacao.Name = "mktxt_Termino_Locacao";
-            mktxt_Termino_Locacao.Size = new Size(94, 23);
+            mktxt_Termino_Locacao.Size = new Size(70, 23);
             mktxt_Termino_Locacao.TabIndex = 29;
             mktxt_Termino_Locacao.ValidatingType = typeof(DateTime);
             // 
@@ -209,7 +199,7 @@
             // mktxt_Placa
             // 
             mktxt_Placa.Location = new Point(147, 265);
-            mktxt_Placa.Mask = "aaaa 0a00";
+            mktxt_Placa.Mask = "AAA 0A00";
             mktxt_Placa.Name = "mktxt_Placa";
             mktxt_Placa.Size = new Size(87, 23);
             mktxt_Placa.TabIndex = 32;
@@ -224,17 +214,26 @@
             lbl_Placa.TabIndex = 33;
             lbl_Placa.Text = "Placa do Veículo";
             // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.Location = new Point(18, 179);
+            maskedTextBox1.Mask = "00/00/0000";
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(70, 23);
+            maskedTextBox1.TabIndex = 34;
+            maskedTextBox1.ValidatingType = typeof(DateTime);
+            // 
             // Formulario_Locacao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(661, 329);
+            Controls.Add(maskedTextBox1);
             Controls.Add(lbl_Placa);
             Controls.Add(mktxt_Placa);
             Controls.Add(mktxt_Valor_Total);
             Controls.Add(mktxt_Valor_Diaria);
             Controls.Add(mktxt_Termino_Locacao);
-            Controls.Add(mktxt_Inicio_Locacao);
             Controls.Add(lbl_Valor_Total);
             Controls.Add(lbl_Valor_Diaria);
             Controls.Add(lbl_Inicio_Locacao);
@@ -270,12 +269,12 @@
         private Label lbl_Inicio_Locacao;
         private Label lbl_Valor_Diaria;
         private TextBox txt_Valor_Total;
-        private MaskedTextBox mktxt_Inicio_Locacao;
         private MaskedTextBox mktxt_Termino_Locacao;
         private MaskedTextBox mktxt_Valor_Diaria;
         private Label lbl_Valor_Total;
         private MaskedTextBox mktxt_Valor_Total;
         private MaskedTextBox mktxt_Placa;
         private Label lbl_Placa;
+        private MaskedTextBox maskedTextBox1;
     }
 }
