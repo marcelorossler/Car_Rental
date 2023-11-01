@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using System.Windows.Forms;
 using Npgsql;
+
+
 
 
 namespace Car_Rental
@@ -24,12 +21,14 @@ namespace Car_Rental
             this.Close();
         }
 
-        private void btn_Veiculo_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void financeiro_Load(object sender, EventArgs e)
+        {
+            Consulta();
+        }
+
+
+        private void Consulta()
         {
             // string de conexao
             string stringConexao = "Server=localhost; Port=5433; " +
@@ -38,9 +37,32 @@ namespace Car_Rental
             // objeto de conexao
             NpgsqlConnection con = new NpgsqlConnection(stringConexao);
 
-            // instrucao sql para o banco de dados
-            string instrucao = "SELECT * FROM locacao " +
-                "order by codigo";
+            DateTime inicio = new DateTime();
+            bool sucesso = DateTime.TryParseExact(mktxt_Inicio_Locacao.Text, "ddMMyyyy",
+                CultureInfo.InvariantCulture, DateTimeStyles.None, out inicio);
+
+            DateTime final = new DateTime();
+            sucesso = DateTime.TryParseExact(mkTxt_Data_Final.Text, "ddMMyyyy",
+                CultureInfo.InvariantCulture, DateTimeStyles.None, out final);
+
+            string instrucao = "SELECT * FROM locacao where codigo > 0 ";
+
+            if (txt_Nome_Cliente.Text != "")
+            {
+                instrucao += $" and nome_cliente = '{txt_Nome_Cliente.Text}' ";
+            }
+
+            if (txt_Placa_Veiculo.Text != "")
+            {
+                instrucao += $" and placa_veiculo = '{txt_Placa_Veiculo.Text}' ";
+            }
+
+            if (inicio > DateTime.MinValue && final > DateTime.MinValue)
+            {
+                instrucao += $" and inicio_locacao >= '{inicio.ToShortDateString()}' and termino_locacao <= '{final.ToShortDateString()}' ";
+            }
+
+            instrucao += " order by codigo ";
 
             DataTable dt = new DataTable(); // tabela virtual pra armazenar resultado
 
@@ -57,11 +79,10 @@ namespace Car_Rental
             dataGridView1.DataSource = dt; // carrega na lista da tela
         }
 
+        private void btn_Consultar_Click(object sender, EventArgs e)
 
-        private void Consulta()
         {
-
-
+            Consulta();
         }
     }
 
