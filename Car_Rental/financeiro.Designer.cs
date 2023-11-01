@@ -49,6 +49,7 @@
             mktxt_Inicio_Locacao = new MaskedTextBox();
             lbl_Data_Inicio = new Label();
             lbl_Opcao_Consulta = new Label();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -233,12 +234,21 @@
             lbl_Opcao_Consulta.TabIndex = 44;
             lbl_Opcao_Consulta.Text = "***   Escolha Opção de Consulta  ***";
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(659, 24);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(106, 23);
+            dateTimePicker1.TabIndex = 45;
+            // 
             // financeiro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightBlue;
             ClientSize = new Size(926, 400);
+            Controls.Add(dateTimePicker1);
             Controls.Add(lbl_Opcao_Consulta);
             Controls.Add(mkTxt_Data_Final);
             Controls.Add(lbl_Data_Final);
@@ -281,5 +291,6 @@
         private DataGridViewTextBoxColumn termino_locacao;
         private DataGridViewTextBoxColumn valor_total;
         private Label lbl_Opcao_Consulta;
+        private DateTimePicker dateTimePicker1;
     }
 }
