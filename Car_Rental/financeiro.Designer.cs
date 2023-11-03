@@ -72,7 +72,7 @@
             dataGridView1.Location = new Point(12, 127);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(950, 179);
+            dataGridView1.Size = new Size(970, 179);
             dataGridView1.TabIndex = 3;
             // 
             // codigo
@@ -88,7 +88,7 @@
             nome_cliente.DataPropertyName = "nome_cliente";
             nome_cliente.HeaderText = "Nome Cliente";
             nome_cliente.Name = "nome_cliente";
-            nome_cliente.Width = 250;
+            nome_cliente.Width = 200;
             // 
             // placa_veiculo
             // 
@@ -110,7 +110,6 @@
             inicio_locacao.HeaderText = "Data Início Locação";
             inicio_locacao.Name = "inicio_locacao";
             inicio_locacao.Resizable = DataGridViewTriState.True;
-            inicio_locacao.Width = 70;
             // 
             // valor_da_diaria
             // 
@@ -131,7 +130,6 @@
             termino_locacao.DataPropertyName = "termino_locacao";
             termino_locacao.HeaderText = "Data Término Locação";
             termino_locacao.Name = "termino_locacao";
-            termino_locacao.Width = 70;
             // 
             // valor_total
             // 
@@ -190,7 +188,7 @@
             // 
             lbl_Data_Final.AutoSize = true;
             lbl_Data_Final.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Data_Final.Location = new Point(789, 73);
+            lbl_Data_Final.Location = new Point(798, 73);
             lbl_Data_Final.Name = "lbl_Data_Final";
             lbl_Data_Final.Size = new Size(68, 17);
             lbl_Data_Final.TabIndex = 42;
@@ -227,7 +225,7 @@
             // dateTimePicker2
             // 
             dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(853, 69);
+            dateTimePicker2.Location = new Point(863, 69);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(97, 23);
             dateTimePicker2.TabIndex = 46;
@@ -249,7 +247,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightBlue;
-            ClientSize = new Size(974, 400);
+            ClientSize = new Size(989, 400);
             Controls.Add(btn_Limpar);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
@@ -284,6 +282,7 @@
         private Label lbl_Opcao_Consulta;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
+        private Button btn_Limpar;
         private DataGridViewTextBoxColumn codigo;
         private DataGridViewTextBoxColumn nome_cliente;
         private DataGridViewTextBoxColumn placa_veiculo;
@@ -293,6 +292,5 @@
         private DataGridViewTextBoxColumn seguro_opicional;
         private DataGridViewTextBoxColumn termino_locacao;
         private DataGridViewTextBoxColumn valor_total;
-        private Button btn_Limpar;
     }
 }

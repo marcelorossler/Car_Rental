@@ -40,14 +40,14 @@ namespace Car_Rental
 
             if (txt_Nome_Cliente.Text != "")
             {
-                instrucao += $" and nome_cliente = '{txt_Nome_Cliente.Text}' ";
+                instrucao += $" and nome_cliente ilike '%{txt_Nome_Cliente.Text}%' ";
             }
 
             if (txt_Placa_Veiculo.Text != "")
             {
                 instrucao += $" and placa_veiculo = '{txt_Placa_Veiculo.Text}' ";
             }
-            // IF abaixo com sua Instrução não funciona "Consulta" de Inicio e Término de locação 
+            /* IF abaixo "Consulta" de Inicio e Término de locação" se estiverem ativas,não deixam que "nome_cliente e placa_veiculo" FUNCIONEM !*/
 
             if (dateTimePicker1.Value.ToShortDateString() != "" && dateTimePicker2.Value.ToShortDateString() != "")
             {
@@ -55,8 +55,7 @@ namespace Car_Rental
                 instrucao += $" and inicio_locacao >=  '{dateTimePicker1.Value.ToShortDateString()}'" + 
                    $" and termino_locacao <= '{dateTimePicker2.Value.ToShortDateString()}'";
 
-                // inicio >= '10/11/2023' and termino <=  '20/11/2023'
-            }
+            }  
 
 
             instrucao += " order by codigo ";
@@ -84,9 +83,9 @@ namespace Car_Rental
 
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
-               txt_Nome_Cliente.Text = "";
-               txt_Placa_Veiculo.Text = "";
-            
+            txt_Nome_Cliente.Text = "";
+            txt_Placa_Veiculo.Text = "";
+
         }
     }
 
