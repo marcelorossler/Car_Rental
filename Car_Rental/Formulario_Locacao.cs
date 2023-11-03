@@ -39,7 +39,7 @@ namespace Car_Rental
                 txt_Nome_Cliente.Text = dt.Rows[0]["nome_cliente"].ToString();
                 txt_Seguro_Opcional.Text = dt.Rows[0]["seguro_opcional"].ToString();
                 maskedTextBox1.Text = dt.Rows[0]["inicio_locacao"].ToString();
-                
+
                 mktxt_Termino_Locacao.Text = dt.Rows[0]["termino_locacao"].ToString();
                 mktxt_Valor_Diaria.Text = dt.Rows[0]["valor_da_diaria"].ToString();
                 mktxt_Valor_Total.Text = dt.Rows[0]["valor_total"].ToString();
@@ -132,6 +132,8 @@ namespace Car_Rental
 
         private void Formulario_Locacao_Load(object sender, EventArgs e)
         {
+            CarregaClientes();
+
             if (CodigoLocacao > 0)
             {
                 AlterarRegistro();
@@ -141,6 +143,31 @@ namespace Car_Rental
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void CarregaClientes()
+        {
+            // string de conexao
+            string stringConexao = "Server=localhost; Port=5433; " +
+                                "User Id=postgres; Password=12345678; DataBase=dbCarRental;";
+
+            // objeto de conexao
+            NpgsqlConnection con = new NpgsqlConnection(stringConexao);
+
+            // instrucao sql para o banco de dados
+            string instrucao = "SELECT * FROM clientes ";
+
+            DataTable dt = new DataTable(); // tabela virtual pra armazenar resultado
+
+            NpgsqlCommand cmd = new NpgsqlCommand(instrucao, con); // passa por parametro a instrucao sql
+
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd); // nunca muda
+
+            da.Fill(dt); // preenche data table com resultado
+
+            comboCliente.DataSource = dt;
+            comboCliente.DisplayMember = "nome_cliente";
+            comboCliente.ValueMember = "nome_cliente";
         }
     }
 }
