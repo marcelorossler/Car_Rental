@@ -47,6 +47,8 @@
             mktxt_Placa = new MaskedTextBox();
             lbl_Placa = new Label();
             maskedTextBox1 = new MaskedTextBox();
+            comboCliente = new ComboBox();
+            comboVeiculo = new ComboBox();
             SuspendLayout();
             // 
             // btn_Voltar
@@ -130,7 +132,7 @@
             // 
             txt_Nome_Cliente.Location = new Point(12, 46);
             txt_Nome_Cliente.Name = "txt_Nome_Cliente";
-            txt_Nome_Cliente.Size = new Size(400, 23);
+            txt_Nome_Cliente.Size = new Size(171, 23);
             txt_Nome_Cliente.TabIndex = 21;
             // 
             // lbl_Nome_Cliente
@@ -223,11 +225,29 @@
             maskedTextBox1.TabIndex = 34;
             maskedTextBox1.ValidatingType = typeof(DateTime);
             // 
+            // comboCliente
+            // 
+            comboCliente.FormattingEnabled = true;
+            comboCliente.Location = new Point(212, 46);
+            comboCliente.Name = "comboCliente";
+            comboCliente.Size = new Size(205, 23);
+            comboCliente.TabIndex = 35;
+            // 
+            // comboVeiculo
+            // 
+            comboVeiculo.FormattingEnabled = true;
+            comboVeiculo.Location = new Point(212, 110);
+            comboVeiculo.Name = "comboVeiculo";
+            comboVeiculo.Size = new Size(205, 23);
+            comboVeiculo.TabIndex = 36;
+            // 
             // Formulario_Locacao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(661, 329);
+            ClientSize = new Size(630, 329);
+            Controls.Add(comboVeiculo);
+            Controls.Add(comboCliente);
             Controls.Add(maskedTextBox1);
             Controls.Add(lbl_Placa);
             Controls.Add(mktxt_Placa);
@@ -276,5 +296,7 @@
         private MaskedTextBox mktxt_Placa;
         private Label lbl_Placa;
         private MaskedTextBox maskedTextBox1;
+        private ComboBox comboCliente;
+        private ComboBox comboVeiculo;
     }
 }
