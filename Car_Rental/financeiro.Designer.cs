@@ -44,12 +44,12 @@
             lbl_Nome_Cliente = new Label();
             txt_Placa_Veiculo = new TextBox();
             lbl_Placa_Veiculo = new Label();
-            mkTxt_Data_Final = new MaskedTextBox();
             lbl_Data_Final = new Label();
-            mktxt_Inicio_Locacao = new MaskedTextBox();
             lbl_Data_Inicio = new Label();
             lbl_Opcao_Consulta = new Label();
             dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            btn_Limpar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             // 
             btn_Voltar.BackColor = Color.White;
             btn_Voltar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Voltar.Location = new Point(248, 323);
+            btn_Voltar.Location = new Point(98, 323);
             btn_Voltar.Name = "btn_Voltar";
             btn_Voltar.Size = new Size(179, 40);
             btn_Voltar.TabIndex = 1;
@@ -72,7 +72,7 @@
             dataGridView1.Location = new Point(12, 127);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(894, 179);
+            dataGridView1.Size = new Size(950, 179);
             dataGridView1.TabIndex = 3;
             // 
             // codigo
@@ -102,7 +102,7 @@
             veiculo_escolhido.DataPropertyName = "veiculo_escolhido";
             veiculo_escolhido.HeaderText = "Veículo ";
             veiculo_escolhido.Name = "veiculo_escolhido";
-            veiculo_escolhido.Width = 120;
+            veiculo_escolhido.Width = 170;
             // 
             // inicio_locacao
             // 
@@ -144,7 +144,7 @@
             // 
             btn_Consultar.BackColor = Color.White;
             btn_Consultar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Consultar.Location = new Point(510, 323);
+            btn_Consultar.Location = new Point(395, 323);
             btn_Consultar.Name = "btn_Consultar";
             btn_Consultar.Size = new Size(179, 40);
             btn_Consultar.TabIndex = 4;
@@ -186,33 +186,15 @@
             lbl_Placa_Veiculo.TabIndex = 9;
             lbl_Placa_Veiculo.Text = "Placa do Veículo:";
             // 
-            // mkTxt_Data_Final
-            // 
-            mkTxt_Data_Final.Location = new Point(835, 67);
-            mkTxt_Data_Final.Mask = "00/00/0000";
-            mkTxt_Data_Final.Name = "mkTxt_Data_Final";
-            mkTxt_Data_Final.Size = new Size(62, 23);
-            mkTxt_Data_Final.TabIndex = 43;
-            mkTxt_Data_Final.ValidatingType = typeof(DateTime);
-            // 
             // lbl_Data_Final
             // 
             lbl_Data_Final.AutoSize = true;
             lbl_Data_Final.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Data_Final.Location = new Point(769, 73);
+            lbl_Data_Final.Location = new Point(789, 73);
             lbl_Data_Final.Name = "lbl_Data_Final";
             lbl_Data_Final.Size = new Size(68, 17);
             lbl_Data_Final.TabIndex = 42;
             lbl_Data_Final.Text = "Data Final:";
-            // 
-            // mktxt_Inicio_Locacao
-            // 
-            mktxt_Inicio_Locacao.Location = new Point(680, 67);
-            mktxt_Inicio_Locacao.Mask = "00/00/0000";
-            mktxt_Inicio_Locacao.Name = "mktxt_Inicio_Locacao";
-            mktxt_Inicio_Locacao.Size = new Size(66, 23);
-            mktxt_Inicio_Locacao.TabIndex = 41;
-            mktxt_Inicio_Locacao.ValidatingType = typeof(DateTime);
             // 
             // lbl_Data_Inicio
             // 
@@ -237,22 +219,42 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(659, 24);
+            dateTimePicker1.Location = new Point(677, 69);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(106, 23);
             dateTimePicker1.TabIndex = 45;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
+            dateTimePicker2.Location = new Point(853, 69);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(97, 23);
+            dateTimePicker2.TabIndex = 46;
+            // 
+            // btn_Limpar
+            // 
+            btn_Limpar.BackColor = Color.White;
+            btn_Limpar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Limpar.Location = new Point(687, 323);
+            btn_Limpar.Name = "btn_Limpar";
+            btn_Limpar.Size = new Size(179, 40);
+            btn_Limpar.TabIndex = 47;
+            btn_Limpar.Text = "LIMPAR ";
+            btn_Limpar.UseVisualStyleBackColor = false;
+            btn_Limpar.Click += btn_Limpar_Click;
             // 
             // financeiro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightBlue;
-            ClientSize = new Size(926, 400);
+            ClientSize = new Size(974, 400);
+            Controls.Add(btn_Limpar);
+            Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
             Controls.Add(lbl_Opcao_Consulta);
-            Controls.Add(mkTxt_Data_Final);
             Controls.Add(lbl_Data_Final);
-            Controls.Add(mktxt_Inicio_Locacao);
             Controls.Add(lbl_Data_Inicio);
             Controls.Add(txt_Placa_Veiculo);
             Controls.Add(lbl_Placa_Veiculo);
@@ -277,10 +279,11 @@
         private Label lbl_Nome_Cliente;
         private TextBox txt_Placa_Veiculo;
         private Label lbl_Placa_Veiculo;
-        private MaskedTextBox mkTxt_Data_Final;
         private Label lbl_Data_Final;
-        private MaskedTextBox mktxt_Inicio_Locacao;
         private Label lbl_Data_Inicio;
+        private Label lbl_Opcao_Consulta;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
         private DataGridViewTextBoxColumn codigo;
         private DataGridViewTextBoxColumn nome_cliente;
         private DataGridViewTextBoxColumn placa_veiculo;
@@ -290,7 +293,6 @@
         private DataGridViewTextBoxColumn seguro_opicional;
         private DataGridViewTextBoxColumn termino_locacao;
         private DataGridViewTextBoxColumn valor_total;
-        private Label lbl_Opcao_Consulta;
-        private DateTimePicker dateTimePicker1;
+        private Button btn_Limpar;
     }
 }

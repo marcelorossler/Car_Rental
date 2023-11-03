@@ -1,5 +1,4 @@
-﻿
-using System.Data;
+﻿using System.Data;
 using System.Globalization;
 using System.Windows.Forms;
 using Npgsql;
@@ -37,14 +36,6 @@ namespace Car_Rental
             // objeto de conexao
             NpgsqlConnection con = new NpgsqlConnection(stringConexao);
 
-            DateTime inicio = new DateTime();
-            bool sucesso = DateTime.TryParseExact(mktxt_Inicio_Locacao.Text, "ddMMyyyy",
-                CultureInfo.InvariantCulture, DateTimeStyles.None, out inicio);
-
-            DateTime final = new DateTime();
-            sucesso = DateTime.TryParseExact(mkTxt_Data_Final.Text, "ddMMyyyy",
-                CultureInfo.InvariantCulture, DateTimeStyles.None, out final);
-
             string instrucao = "SELECT * FROM locacao where codigo > 0 ";
 
             if (txt_Nome_Cliente.Text != "")
@@ -56,11 +47,17 @@ namespace Car_Rental
             {
                 instrucao += $" and placa_veiculo = '{txt_Placa_Veiculo.Text}' ";
             }
+            // IF abaixo com sua Instrução não funciona "Consulta" de Inicio e Término de locação 
 
-            if (inicio > DateTime.MinValue && final > DateTime.MinValue)
+            if (dateTimePicker1.Value.ToShortDateString() != "" && dateTimePicker2.Value.ToShortDateString() != "")
             {
-                instrucao += $" and inicio_locacao >= '{inicio.ToShortDateString()}' and termino_locacao <= '{final.ToShortDateString()}' ";
+
+                instrucao += $" and inicio_locacao >=  '{dateTimePicker1.Value.ToShortDateString()}'" + 
+                   $" and termino_locacao <= '{dateTimePicker2.Value.ToShortDateString()}'";
+
+                // inicio >= '10/11/2023' and termino <=  '20/11/2023'
             }
+
 
             instrucao += " order by codigo ";
 
@@ -83,6 +80,13 @@ namespace Car_Rental
 
         {
             Consulta();
+        }
+
+        private void btn_Limpar_Click(object sender, EventArgs e)
+        {
+               txt_Nome_Cliente.Text = "";
+               txt_Placa_Veiculo.Text = "";
+            
         }
     }
 
