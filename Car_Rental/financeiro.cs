@@ -30,8 +30,7 @@ namespace Car_Rental
         private void Consulta()
         {
             // string de conexao
-            string stringConexao = "Server=localhost; Port=5433; " +
-                                "User Id=postgres; Password=12345678; DataBase=dbCarRental;";
+            string stringConexao = "Server=localhost; Port=5432; " + "User Id=postgres; Password=12345678; DataBase=CarRental;";
 
             // objeto de conexao
             NpgsqlConnection con = new NpgsqlConnection(stringConexao);
@@ -52,10 +51,10 @@ namespace Car_Rental
             if (dateTimePicker1.Value.ToShortDateString() != "" && dateTimePicker2.Value.ToShortDateString() != "")
             {
 
-                instrucao += $" and inicio_locacao >=  '{dateTimePicker1.Value.ToShortDateString()}'" + 
+                instrucao += $" and inicio_locacao >=  '{dateTimePicker1.Value.ToShortDateString()}'" +
                    $" and termino_locacao <= '{dateTimePicker2.Value.ToShortDateString()}'";
 
-            }  
+            }
 
 
             instrucao += " order by codigo ";

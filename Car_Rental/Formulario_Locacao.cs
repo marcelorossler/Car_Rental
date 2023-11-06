@@ -17,8 +17,7 @@ namespace Car_Rental
             try
             {
                 // string de conexao
-                string stringConexao = "Server=localhost; Port=5433; " +
-                                    "User Id=postgres; Password=12345678; DataBase=dbCarRental;";
+                string stringConexao = "Server=localhost; Port=5432; " + "User Id=postgres; Password=12345678; DataBase=CarRental;";
 
                 // objeto de conexao
                 NpgsqlConnection con = new NpgsqlConnection(stringConexao);
@@ -35,8 +34,8 @@ namespace Car_Rental
 
                 da.Fill(dt); // preenche data table com resultado
 
-                txt_Veiculo.Text = dt.Rows[0]["veiculo_escolhido"].ToString();
-                txt_Nome_Cliente.Text = dt.Rows[0]["nome_cliente"].ToString();
+                comboVeiculo.Text = dt.Rows[0]["veiculo_escolhido"].ToString();
+                comboCliente.Text = dt.Rows[0]["nome_cliente"].ToString();
                 txt_Seguro_Opcional.Text = dt.Rows[0]["seguro_opcional"].ToString();
                 maskedTextBox1.Text = dt.Rows[0]["inicio_locacao"].ToString();
 
@@ -59,8 +58,8 @@ namespace Car_Rental
 
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
-            txt_Veiculo.Text = "";
-            txt_Nome_Cliente.Text = "";
+            comboVeiculo.Text = "";
+            comboCliente.Text = "";
             txt_Seguro_Opcional.Text = "";
             maskedTextBox1.Text = "";
             mktxt_Termino_Locacao.Text = "";
@@ -72,8 +71,7 @@ namespace Car_Rental
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
 
-            string stringConexao = "Server=localhost; Port=5433; " +
-                            "User Id=postgres; Password=12345678; DataBase=dbCarRental;";
+            string stringConexao = "Server=localhost; Port=5432; " + "User Id=postgres; Password=12345678; DataBase=CarRental;";
 
             // objeto de conexao
             NpgsqlConnection con = new NpgsqlConnection(stringConexao);
@@ -96,14 +94,14 @@ namespace Car_Rental
 
             // instrucao sql para o banco de dados
             string instrucao = "insert into  locacao ( veiculo_escolhido,seguro_opcional,nome_cliente,valor_da_diaria,valor_total,inicio_locacao,termino_locacao,placa_veiculo) " +
-                "values ('" + txt_Veiculo.Text + "','" + txt_Seguro_Opcional.Text + "','" + txt_Nome_Cliente.Text + "'," +
+                "values ('" + comboVeiculo.Text + "','" + txt_Seguro_Opcional.Text + "','" + comboCliente.Text + "'," +
                 "'" + mktxt_Valor_Diaria.Text + "','" + mktxt_Valor_Total.Text + "','" + dataInicio.ToShortDateString() + "'," +
                 "'" + dataTermino.ToShortDateString() + "','" + mktxt_Placa.Text + "'); ";
 
             if (CodigoLocacao > 0)
             {
-                instrucao = $"update locacao set codigo  = '{txt_Veiculo.Text}', seguro_opcional = '{txt_Seguro_Opcional.Text}'," +
-                    $" nome_cliente = '{txt_Nome_Cliente.Text}' , valor_da_diaria = '{mktxt_Valor_Diaria.Text}' , valor_total = '{mktxt_Valor_Total}'" +
+                instrucao = $"update locacao set codigo  = '{comboVeiculo.Text}', seguro_opcional = '{txt_Seguro_Opcional.Text}'," +
+                    $" nome_cliente = '{comboCliente.Text}' , valor_da_diaria = '{mktxt_Valor_Diaria.Text}' , valor_total = '{mktxt_Valor_Total}'" +
                     $" inicio_locacao = '{maskedTextBox1}', termino_locacao = '{mktxt_Termino_Locacao.Text}', placa_veiculo{mktxt_Placa.Text}'" +
                     $" where codigo = {CodigoLocacao}";
             }
@@ -148,8 +146,7 @@ namespace Car_Rental
         private void CarregaClientes()
         {
             // string de conexao
-            string stringConexao = "Server=localhost; Port=5433; " +
-                                "User Id=postgres; Password=12345678; DataBase=dbCarRental;";
+            string stringConexao = "Server=localhost; Port=5432; " + "User Id=postgres; Password=12345678; DataBase=CarRental;";
 
             // objeto de conexao
             NpgsqlConnection con = new NpgsqlConnection(stringConexao);

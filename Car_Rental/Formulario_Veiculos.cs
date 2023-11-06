@@ -16,8 +16,8 @@ namespace Car_Rental
             try
             {
                 // string de conexao
-                string stringConexao = "Server=localhost; Port=5433; " +
-                                    "User Id=postgres; Password=12345678; DataBase=dbCarRental;";
+                string stringConexao = "Server=localhost; Port=5432; " +
+                                    "User Id=postgres; Password=12345678; DataBase=CarRental;";
 
                 // objeto de conexao
                 NpgsqlConnection con = new NpgsqlConnection(stringConexao);
@@ -72,8 +72,7 @@ namespace Car_Rental
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
 
-            string stringConexao = "Server=localhost; Port=5433; " +
-                            "User Id=postgres; Password=12345678; DataBase=dbCarRental;";
+            string stringConexao = "Server=localhost; Port=5432; " + "User Id=postgres; Password=12345678; DataBase=CarRental;";
 
             // objeto de conexao
             NpgsqlConnection con = new NpgsqlConnection(stringConexao);
