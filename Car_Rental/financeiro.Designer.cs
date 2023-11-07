@@ -50,6 +50,7 @@
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
             btn_Limpar = new Button();
+            btn_Criar_Locacao = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // 
             btn_Voltar.BackColor = Color.White;
             btn_Voltar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Voltar.Location = new Point(112, 431);
+            btn_Voltar.Location = new Point(14, 448);
             btn_Voltar.Margin = new Padding(3, 4, 3, 4);
             btn_Voltar.Name = "btn_Voltar";
             btn_Voltar.Size = new Size(205, 53);
@@ -75,7 +76,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1128, 239);
+            dataGridView1.Size = new Size(1098, 239);
             dataGridView1.TabIndex = 3;
             // 
             // codigo
@@ -85,7 +86,7 @@
             codigo.HeaderText = "Código";
             codigo.MinimumWidth = 6;
             codigo.Name = "codigo";
-            codigo.Width = 50;
+            codigo.Width = 70;
             // 
             // nome_cliente
             // 
@@ -93,7 +94,7 @@
             nome_cliente.HeaderText = "Nome Cliente";
             nome_cliente.MinimumWidth = 6;
             nome_cliente.Name = "nome_cliente";
-            nome_cliente.Width = 230;
+            nome_cliente.Width = 280;
             // 
             // placa_veiculo
             // 
@@ -101,7 +102,7 @@
             placa_veiculo.HeaderText = "Placa  Veículo";
             placa_veiculo.MinimumWidth = 6;
             placa_veiculo.Name = "placa_veiculo";
-            placa_veiculo.Width = 125;
+            placa_veiculo.Width = 85;
             // 
             // veiculo_escolhido
             // 
@@ -109,7 +110,7 @@
             veiculo_escolhido.HeaderText = "Veículo ";
             veiculo_escolhido.MinimumWidth = 6;
             veiculo_escolhido.Name = "veiculo_escolhido";
-            veiculo_escolhido.Width = 200;
+            veiculo_escolhido.Width = 190;
             // 
             // inicio_locacao
             // 
@@ -118,7 +119,7 @@
             inicio_locacao.MinimumWidth = 6;
             inicio_locacao.Name = "inicio_locacao";
             inicio_locacao.Resizable = DataGridViewTriState.True;
-            inicio_locacao.Width = 125;
+            inicio_locacao.Width = 95;
             // 
             // valor_da_diaria
             // 
@@ -126,7 +127,7 @@
             valor_da_diaria.HeaderText = "Valor Diária";
             valor_da_diaria.MinimumWidth = 6;
             valor_da_diaria.Name = "valor_da_diaria";
-            valor_da_diaria.Width = 80;
+            valor_da_diaria.Width = 85;
             // 
             // seguro_opicional
             // 
@@ -142,7 +143,7 @@
             termino_locacao.HeaderText = "Data Término Locação";
             termino_locacao.MinimumWidth = 6;
             termino_locacao.Name = "termino_locacao";
-            termino_locacao.Width = 125;
+            termino_locacao.Width = 95;
             // 
             // valor_total
             // 
@@ -150,13 +151,13 @@
             valor_total.HeaderText = "Valor Total";
             valor_total.MinimumWidth = 6;
             valor_total.Name = "valor_total";
-            valor_total.Width = 80;
+            valor_total.Width = 85;
             // 
             // btn_Consultar
             // 
             btn_Consultar.BackColor = Color.White;
             btn_Consultar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Consultar.Location = new Point(451, 431);
+            btn_Consultar.Location = new Point(317, 448);
             btn_Consultar.Margin = new Padding(3, 4, 3, 4);
             btn_Consultar.Name = "btn_Consultar";
             btn_Consultar.Size = new Size(205, 53);
@@ -253,7 +254,7 @@
             // 
             btn_Limpar.BackColor = Color.White;
             btn_Limpar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Limpar.Location = new Point(785, 431);
+            btn_Limpar.Location = new Point(900, 448);
             btn_Limpar.Margin = new Padding(3, 4, 3, 4);
             btn_Limpar.Name = "btn_Limpar";
             btn_Limpar.Size = new Size(205, 53);
@@ -262,12 +263,26 @@
             btn_Limpar.UseVisualStyleBackColor = false;
             btn_Limpar.Click += btn_Limpar_Click;
             // 
+            // btn_Criar_Locacao
+            // 
+            btn_Criar_Locacao.BackColor = Color.White;
+            btn_Criar_Locacao.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Criar_Locacao.Location = new Point(610, 448);
+            btn_Criar_Locacao.Margin = new Padding(3, 4, 3, 4);
+            btn_Criar_Locacao.Name = "btn_Criar_Locacao";
+            btn_Criar_Locacao.Size = new Size(205, 53);
+            btn_Criar_Locacao.TabIndex = 48;
+            btn_Criar_Locacao.Text = "Criar Locação";
+            btn_Criar_Locacao.UseVisualStyleBackColor = false;
+            btn_Criar_Locacao.Click += btn_Criar_Locacao_Click;
+            // 
             // financeiro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightBlue;
             ClientSize = new Size(1152, 533);
+            Controls.Add(btn_Criar_Locacao);
             Controls.Add(btn_Limpar);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
@@ -313,5 +328,6 @@
         private DataGridViewTextBoxColumn seguro_opicional;
         private DataGridViewTextBoxColumn termino_locacao;
         private DataGridViewTextBoxColumn valor_total;
+        private Button btn_Criar_Locacao;
     }
 }

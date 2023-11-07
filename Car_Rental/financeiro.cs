@@ -85,6 +85,83 @@ namespace Car_Rental
             txt_Placa_Veiculo.Text = "";
 
         }
+
+
+        class Locacao
+        {
+            public string VeiculoEscolhido { get; set; }
+            public DateTime Data { get; set; }
+            public DateTime InicioLocacao { get; set; }
+            public DateTime TerminoLocacao { get; set; }
+        }
+
+        private void btn_Criar_Locacao_Click(object sender, EventArgs e)
+        {
+
+          List<Locacao> locacoes = new List<Locacao>();
+
+            // Capturar o veículo escolhido do usuário
+            Console.Write("Digite o veículo escolhido: ");
+            string veiculoEscolhido = Console.ReadLine();
+
+            // Capturar a data do usuário
+            Console.Write("Digite a data da locação (dd-MM-yyyy): ");
+            if (DateTime.TryParse(Console.ReadLine(), out DateTime data))
+            {
+                // Capturar a data de início da locação do usuário
+                Console.Write("Digite a data de início da locação (dd-MM-yyyy): ");
+                if (DateTime.TryParse(Console.ReadLine(), out DateTime inicioLocacao))
+                {
+                    // Capturar a data de término da locação do usuário
+                    Console.Write("Digite a data de término da locação (dd-MM-yyyy): ");
+                    if (DateTime.TryParse(Console.ReadLine(), out DateTime terminoLocacao))
+                    {
+                        // Verificar se o veículo já está locado no mesmo período
+                        bool isConflict = locacoes.Exists(l =>
+                            l.VeiculoEscolhido == veiculoEscolhido &&
+                            ((data >= l.InicioLocacao && data <= l.TerminoLocacao) ||
+                            (terminoLocacao >= l.InicioLocacao && terminoLocacao <= l.TerminoLocacao)));
+
+                        if (isConflict)
+                        {
+                            Console.WriteLine("O veículo já está locado durante esse período. Criação de locação não permitida.");
+                        }
+                        else
+                        {
+                            // Criar a nova locação
+                            Locacao novaLocacao = new Locacao
+                            {
+                                VeiculoEscolhido = veiculoEscolhido,
+                                Data = data,
+                                InicioLocacao = inicioLocacao,
+                                TerminoLocacao = terminoLocacao
+                            };
+
+                            locacoes.Add(novaLocacao);
+                            Console.WriteLine("Locação criada com sucesso.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Data de término inválida.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Data de início inválida.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Data inválida.");
+            }
+
+        }
+
+
+
     }
 
+
 }
+

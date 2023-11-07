@@ -26,7 +26,7 @@ namespace Car_Rental
 
         private void btn_Consulta_Locacoes_Click(object sender, EventArgs e)
         {
-            Locacao form = new Locacao ();
+            Locacao form = new Locacao();
             form.ShowDialog();
 
         }

@@ -49,12 +49,12 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { codigo, nome_cliente, placa_veiculo, veiculo_escolhido, inicio_locacao, valor_da_diaria, seguro_opicional, termino_locacao, valor_total });
-            dataGridView1.Location = new Point(14, 49);
+            dataGridView1.Location = new Point(17, 41);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1268, 200);
+            dataGridView1.Size = new Size(1100, 236);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -64,7 +64,7 @@
             codigo.HeaderText = "Código";
             codigo.MinimumWidth = 6;
             codigo.Name = "codigo";
-            codigo.Width = 70;
+            codigo.Width = 60;
             // 
             // nome_cliente
             // 
@@ -72,7 +72,7 @@
             nome_cliente.HeaderText = "Nome Cliente";
             nome_cliente.MinimumWidth = 6;
             nome_cliente.Name = "nome_cliente";
-            nome_cliente.Width = 300;
+            nome_cliente.Width = 285;
             // 
             // placa_veiculo
             // 
@@ -80,7 +80,7 @@
             placa_veiculo.HeaderText = "Placa do Veículo";
             placa_veiculo.MinimumWidth = 6;
             placa_veiculo.Name = "placa_veiculo";
-            placa_veiculo.Width = 125;
+            placa_veiculo.Width = 85;
             // 
             // veiculo_escolhido
             // 
@@ -88,7 +88,7 @@
             veiculo_escolhido.HeaderText = "Veículo Escolhido";
             veiculo_escolhido.MinimumWidth = 6;
             veiculo_escolhido.Name = "veiculo_escolhido";
-            veiculo_escolhido.Width = 150;
+            veiculo_escolhido.Width = 180;
             // 
             // inicio_locacao
             // 
@@ -96,7 +96,7 @@
             inicio_locacao.HeaderText = "Data Início Locação";
             inicio_locacao.MinimumWidth = 6;
             inicio_locacao.Name = "inicio_locacao";
-            inicio_locacao.Width = 125;
+            inicio_locacao.Width = 95;
             // 
             // valor_da_diaria
             // 
@@ -104,7 +104,7 @@
             valor_da_diaria.HeaderText = "Valor da Diária";
             valor_da_diaria.MinimumWidth = 6;
             valor_da_diaria.Name = "valor_da_diaria";
-            valor_da_diaria.Width = 125;
+            valor_da_diaria.Width = 85;
             // 
             // seguro_opicional
             // 
@@ -112,7 +112,7 @@
             seguro_opicional.HeaderText = "Seguro Opcional";
             seguro_opicional.MinimumWidth = 6;
             seguro_opicional.Name = "seguro_opicional";
-            seguro_opicional.Width = 70;
+            seguro_opicional.Width = 55;
             // 
             // termino_locacao
             // 
@@ -120,7 +120,7 @@
             termino_locacao.HeaderText = "Data Término Locação";
             termino_locacao.MinimumWidth = 6;
             termino_locacao.Name = "termino_locacao";
-            termino_locacao.Width = 125;
+            termino_locacao.Width = 95;
             // 
             // valor_total
             // 
@@ -128,13 +128,13 @@
             valor_total.HeaderText = "Valor Total";
             valor_total.MinimumWidth = 6;
             valor_total.Name = "valor_total";
-            valor_total.Width = 125;
+            valor_total.Width = 85;
             // 
             // btn_Cadastrar
             // 
-            btn_Cadastrar.BackColor = Color.SandyBrown;
+            btn_Cadastrar.BackColor = Color.Peru;
             btn_Cadastrar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Cadastrar.Location = new Point(407, 267);
+            btn_Cadastrar.Location = new Point(327, 319);
             btn_Cadastrar.Margin = new Padding(3, 4, 3, 4);
             btn_Cadastrar.Name = "btn_Cadastrar";
             btn_Cadastrar.Size = new Size(188, 83);
@@ -145,9 +145,9 @@
             // 
             // btn_Alterar_Dados
             // 
-            btn_Alterar_Dados.BackColor = Color.PeachPuff;
+            btn_Alterar_Dados.BackColor = Color.SandyBrown;
             btn_Alterar_Dados.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Alterar_Dados.Location = new Point(674, 267);
+            btn_Alterar_Dados.Location = new Point(604, 319);
             btn_Alterar_Dados.Margin = new Padding(3, 4, 3, 4);
             btn_Alterar_Dados.Name = "btn_Alterar_Dados";
             btn_Alterar_Dados.Size = new Size(196, 83);
@@ -158,9 +158,9 @@
             // 
             // btn_Voltar
             // 
-            btn_Voltar.BackColor = Color.Peru;
+            btn_Voltar.BackColor = Color.Chocolate;
             btn_Voltar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Voltar.Location = new Point(112, 267);
+            btn_Voltar.Location = new Point(31, 319);
             btn_Voltar.Margin = new Padding(3, 4, 3, 4);
             btn_Voltar.Name = "btn_Voltar";
             btn_Voltar.Size = new Size(196, 83);
@@ -171,9 +171,9 @@
             // 
             // btn_Excluir
             // 
-            btn_Excluir.BackColor = Color.AntiqueWhite;
+            btn_Excluir.BackColor = Color.PeachPuff;
             btn_Excluir.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Excluir.Location = new Point(959, 267);
+            btn_Excluir.Location = new Point(879, 319);
             btn_Excluir.Margin = new Padding(3, 4, 3, 4);
             btn_Excluir.Name = "btn_Excluir";
             btn_Excluir.Size = new Size(211, 83);
@@ -186,8 +186,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PeachPuff;
-            ClientSize = new Size(1365, 427);
+            BackColor = Color.SeaShell;
+            ClientSize = new Size(1129, 427);
             Controls.Add(btn_Excluir);
             Controls.Add(btn_Voltar);
             Controls.Add(btn_Alterar_Dados);
