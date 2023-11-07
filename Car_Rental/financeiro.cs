@@ -46,7 +46,6 @@ namespace Car_Rental
             {
                 instrucao += $" and placa_veiculo = '{txt_Placa_Veiculo.Text}' ";
             }
-            /* IF abaixo "Consulta" de Inicio e Término de locação" se estiverem ativas,não deixam que "nome_cliente e placa_veiculo" FUNCIONEM !*/
 
             if (dateTimePicker1.Value.ToShortDateString() != "" && dateTimePicker2.Value.ToShortDateString() != "")
             {

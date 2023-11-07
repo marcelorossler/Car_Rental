@@ -43,11 +43,12 @@
             // 
             // btn_Salvar
             // 
-            btn_Salvar.BackColor = Color.Green;
+            btn_Salvar.BackColor = Color.LightPink;
             btn_Salvar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Salvar.Location = new Point(619, 185);
+            btn_Salvar.Location = new Point(573, 173);
+            btn_Salvar.Margin = new Padding(3, 4, 3, 4);
             btn_Salvar.Name = "btn_Salvar";
-            btn_Salvar.Size = new Size(131, 76);
+            btn_Salvar.Size = new Size(150, 66);
             btn_Salvar.TabIndex = 0;
             btn_Salvar.Text = "SALVAR";
             btn_Salvar.UseVisualStyleBackColor = false;
@@ -56,61 +57,64 @@
             // lbl_Nome
             // 
             lbl_Nome.AutoSize = true;
-            lbl_Nome.Location = new Point(46, 67);
+            lbl_Nome.Location = new Point(53, 89);
             lbl_Nome.Name = "lbl_Nome";
-            lbl_Nome.Size = new Size(42, 15);
+            lbl_Nome.Size = new Size(52, 20);
             lbl_Nome.TabIndex = 1;
             lbl_Nome.Text = "NOME";
             // 
             // txt_Nome
             // 
-            txt_Nome.Location = new Point(46, 85);
+            txt_Nome.Location = new Point(53, 113);
+            txt_Nome.Margin = new Padding(3, 4, 3, 4);
             txt_Nome.Name = "txt_Nome";
-            txt_Nome.Size = new Size(400, 23);
+            txt_Nome.Size = new Size(457, 27);
             txt_Nome.TabIndex = 2;
             txt_Nome.TextChanged += txt_Nome_TextChanged;
             // 
             // txt_Endereco
             // 
-            txt_Endereco.Location = new Point(46, 338);
+            txt_Endereco.Location = new Point(53, 331);
+            txt_Endereco.Margin = new Padding(3, 4, 3, 4);
             txt_Endereco.Name = "txt_Endereco";
-            txt_Endereco.Size = new Size(400, 23);
+            txt_Endereco.Size = new Size(457, 27);
             txt_Endereco.TabIndex = 4;
             // 
             // lbl_Endereco
             // 
             lbl_Endereco.AutoSize = true;
-            lbl_Endereco.Location = new Point(46, 320);
+            lbl_Endereco.Location = new Point(53, 307);
             lbl_Endereco.Name = "lbl_Endereco";
-            lbl_Endereco.Size = new Size(66, 15);
+            lbl_Endereco.Size = new Size(84, 20);
             lbl_Endereco.TabIndex = 3;
             lbl_Endereco.Text = "ENDEREÇO";
             // 
             // lbl_Nascimento
             // 
             lbl_Nascimento.AutoSize = true;
-            lbl_Nascimento.Location = new Point(46, 234);
+            lbl_Nascimento.Location = new Point(191, 188);
             lbl_Nascimento.Name = "lbl_Nascimento";
-            lbl_Nascimento.Size = new Size(84, 15);
+            lbl_Nascimento.Size = new Size(105, 20);
             lbl_Nascimento.TabIndex = 5;
             lbl_Nascimento.Text = " NASCIMENTO";
             // 
             // lbl_Cpf
             // 
             lbl_Cpf.AutoSize = true;
-            lbl_Cpf.Location = new Point(46, 141);
+            lbl_Cpf.Location = new Point(53, 188);
             lbl_Cpf.Name = "lbl_Cpf";
-            lbl_Cpf.Size = new Size(28, 15);
+            lbl_Cpf.Size = new Size(33, 20);
             lbl_Cpf.TabIndex = 7;
             lbl_Cpf.Text = "CPF";
             // 
             // btn_Limpar
             // 
-            btn_Limpar.BackColor = Color.Yellow;
+            btn_Limpar.BackColor = Color.LavenderBlush;
             btn_Limpar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Limpar.Location = new Point(619, 295);
+            btn_Limpar.Location = new Point(573, 298);
+            btn_Limpar.Margin = new Padding(3, 4, 3, 4);
             btn_Limpar.Name = "btn_Limpar";
-            btn_Limpar.Size = new Size(131, 76);
+            btn_Limpar.Size = new Size(150, 60);
             btn_Limpar.TabIndex = 9;
             btn_Limpar.Text = "LIMPAR";
             btn_Limpar.UseVisualStyleBackColor = false;
@@ -118,11 +122,12 @@
             // 
             // btn_Voltar
             // 
-            btn_Voltar.BackColor = Color.Orange;
+            btn_Voltar.BackColor = Color.PaleVioletRed;
             btn_Voltar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Voltar.Location = new Point(619, 67);
+            btn_Voltar.Location = new Point(573, 39);
+            btn_Voltar.Margin = new Padding(3, 4, 3, 4);
             btn_Voltar.Name = "btn_Voltar";
-            btn_Voltar.Size = new Size(131, 76);
+            btn_Voltar.Size = new Size(150, 70);
             btn_Voltar.TabIndex = 10;
             btn_Voltar.Text = "VOLTAR";
             btn_Voltar.UseVisualStyleBackColor = false;
@@ -130,26 +135,29 @@
             // 
             // mskd_txbox_Cpf
             // 
-            mskd_txbox_Cpf.Location = new Point(46, 159);
+            mskd_txbox_Cpf.Location = new Point(53, 212);
+            mskd_txbox_Cpf.Margin = new Padding(3, 4, 3, 4);
             mskd_txbox_Cpf.Mask = "000.000.000-00";
             mskd_txbox_Cpf.Name = "mskd_txbox_Cpf";
-            mskd_txbox_Cpf.Size = new Size(84, 23);
+            mskd_txbox_Cpf.Size = new Size(95, 27);
             mskd_txbox_Cpf.TabIndex = 11;
             // 
             // maskd_txtBox_Nascimento
             // 
-            maskd_txtBox_Nascimento.Location = new Point(46, 252);
+            maskd_txtBox_Nascimento.Location = new Point(191, 212);
+            maskd_txtBox_Nascimento.Margin = new Padding(3, 4, 3, 4);
             maskd_txtBox_Nascimento.Mask = "00/00/0000";
             maskd_txtBox_Nascimento.Name = "maskd_txtBox_Nascimento";
-            maskd_txtBox_Nascimento.Size = new Size(84, 23);
+            maskd_txtBox_Nascimento.Size = new Size(95, 27);
             maskd_txtBox_Nascimento.TabIndex = 12;
             maskd_txtBox_Nascimento.ValidatingType = typeof(DateTime);
             // 
             // Formulario_Clientes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Pink;
+            ClientSize = new Size(816, 446);
             Controls.Add(maskd_txtBox_Nascimento);
             Controls.Add(mskd_txbox_Cpf);
             Controls.Add(btn_Voltar);
@@ -161,6 +169,7 @@
             Controls.Add(txt_Nome);
             Controls.Add(lbl_Nome);
             Controls.Add(btn_Salvar);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Formulario_Clientes";
             Text = "Formulario_Clientes";
             Load += Formulario_Clientes_Load;

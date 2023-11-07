@@ -43,12 +43,13 @@
             // 
             // btn_Alterar
             // 
-            btn_Alterar.BackColor = Color.Yellow;
+            btn_Alterar.BackColor = Color.YellowGreen;
             btn_Alterar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Alterar.ForeColor = Color.Black;
-            btn_Alterar.Location = new Point(475, 257);
+            btn_Alterar.Location = new Point(503, 312);
+            btn_Alterar.Margin = new Padding(3, 4, 3, 4);
             btn_Alterar.Name = "btn_Alterar";
-            btn_Alterar.Size = new Size(130, 65);
+            btn_Alterar.Size = new Size(163, 68);
             btn_Alterar.TabIndex = 8;
             btn_Alterar.Text = "ALTERAR";
             btn_Alterar.UseVisualStyleBackColor = false;
@@ -56,12 +57,13 @@
             // 
             // btn_Excluir
             // 
-            btn_Excluir.BackColor = Color.Red;
+            btn_Excluir.BackColor = Color.MediumSeaGreen;
             btn_Excluir.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Excluir.ForeColor = Color.Black;
-            btn_Excluir.Location = new Point(682, 257);
+            btn_Excluir.Location = new Point(731, 312);
+            btn_Excluir.Margin = new Padding(3, 4, 3, 4);
             btn_Excluir.Name = "btn_Excluir";
-            btn_Excluir.Size = new Size(130, 65);
+            btn_Excluir.Size = new Size(167, 68);
             btn_Excluir.TabIndex = 7;
             btn_Excluir.Text = "EXCLUIR";
             btn_Excluir.UseVisualStyleBackColor = false;
@@ -69,25 +71,27 @@
             // 
             // btn_Incluir
             // 
-            btn_Incluir.BackColor = Color.Green;
-            btn_Incluir.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Incluir.BackColor = Color.OliveDrab;
+            btn_Incluir.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Incluir.ForeColor = Color.Black;
-            btn_Incluir.Location = new Point(272, 257);
+            btn_Incluir.Location = new Point(271, 312);
+            btn_Incluir.Margin = new Padding(3, 4, 3, 4);
             btn_Incluir.Name = "btn_Incluir";
-            btn_Incluir.Size = new Size(130, 65);
+            btn_Incluir.Size = new Size(167, 68);
             btn_Incluir.TabIndex = 6;
-            btn_Incluir.Text = "INCLUIR NOVO CLIENTE";
+            btn_Incluir.Text = "INCLUIR NOVO ";
             btn_Incluir.UseVisualStyleBackColor = false;
             btn_Incluir.Click += btn_Incluir_Click;
             // 
             // btnVoltar
             // 
-            btnVoltar.BackColor = Color.Orange;
+            btnVoltar.BackColor = Color.Green;
             btnVoltar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnVoltar.ForeColor = Color.Black;
-            btnVoltar.Location = new Point(64, 257);
+            btnVoltar.Location = new Point(14, 312);
+            btnVoltar.Margin = new Padding(3, 4, 3, 4);
             btnVoltar.Name = "btnVoltar";
-            btnVoltar.Size = new Size(130, 65);
+            btnVoltar.Size = new Size(173, 68);
             btnVoltar.TabIndex = 5;
             btnVoltar.Text = "VOLTAR";
             btnVoltar.UseVisualStyleBackColor = false;
@@ -97,10 +101,12 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { codigo, nome, cpf, endereco, nascimento });
-            dataGridView1.Location = new Point(12, 48);
+            dataGridView1.Location = new Point(14, 64);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(825, 150);
+            dataGridView1.Size = new Size(884, 200);
             dataGridView1.TabIndex = 9;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -108,6 +114,7 @@
             // 
             codigo.DataPropertyName = "codigo";
             codigo.HeaderText = "Código";
+            codigo.MinimumWidth = 6;
             codigo.Name = "codigo";
             codigo.Width = 70;
             // 
@@ -115,6 +122,7 @@
             // 
             nome.DataPropertyName = "nome";
             nome.HeaderText = "Nome";
+            nome.MinimumWidth = 6;
             nome.Name = "nome";
             nome.Width = 230;
             // 
@@ -122,12 +130,15 @@
             // 
             cpf.DataPropertyName = "cpf";
             cpf.HeaderText = "CPF";
+            cpf.MinimumWidth = 6;
             cpf.Name = "cpf";
+            cpf.Width = 125;
             // 
             // endereco
             // 
             endereco.DataPropertyName = "Endereco";
             endereco.HeaderText = "Endereço";
+            endereco.MinimumWidth = 6;
             endereco.Name = "endereco";
             endereco.Width = 280;
             // 
@@ -135,18 +146,22 @@
             // 
             nascimento.DataPropertyName = "nascimento";
             nascimento.HeaderText = "Data Nascimento";
+            nascimento.MinimumWidth = 6;
             nascimento.Name = "nascimento";
+            nascimento.Width = 125;
             // 
             // frm_Clientes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(856, 355);
+            BackColor = Color.LightGreen;
+            ClientSize = new Size(918, 473);
             Controls.Add(dataGridView1);
             Controls.Add(btn_Alterar);
             Controls.Add(btn_Excluir);
             Controls.Add(btn_Incluir);
             Controls.Add(btnVoltar);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frm_Clientes";
             Text = "Clientes";
             Load += frm_Clientes_Load;

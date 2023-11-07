@@ -113,7 +113,7 @@ namespace Car_Rental
 
 
         }
-    
+
         private void txt_Nome_TextChanged(object sender, EventArgs e)
         {
 
@@ -123,6 +123,6 @@ namespace Car_Rental
 }
 
 
-    
+
 
 

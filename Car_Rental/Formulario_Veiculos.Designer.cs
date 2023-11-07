@@ -43,27 +43,29 @@
             // 
             // txt_Marca
             // 
-            txt_Marca.Location = new Point(12, 50);
+            txt_Marca.Location = new Point(14, 67);
+            txt_Marca.Margin = new Padding(3, 4, 3, 4);
             txt_Marca.Name = "txt_Marca";
-            txt_Marca.Size = new Size(400, 23);
+            txt_Marca.Size = new Size(457, 27);
             txt_Marca.TabIndex = 4;
             // 
             // lbl_Marca
             // 
             lbl_Marca.AutoSize = true;
-            lbl_Marca.Location = new Point(12, 32);
+            lbl_Marca.Location = new Point(14, 43);
             lbl_Marca.Name = "lbl_Marca";
-            lbl_Marca.Size = new Size(49, 15);
+            lbl_Marca.Size = new Size(60, 20);
             lbl_Marca.TabIndex = 3;
             lbl_Marca.Text = "MARCA";
             // 
             // btn_Voltar
             // 
-            btn_Voltar.BackColor = Color.Orange;
+            btn_Voltar.BackColor = Color.Gold;
             btn_Voltar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Voltar.Location = new Point(608, 50);
+            btn_Voltar.Location = new Point(695, 67);
+            btn_Voltar.Margin = new Padding(3, 4, 3, 4);
             btn_Voltar.Name = "btn_Voltar";
-            btn_Voltar.Size = new Size(131, 76);
+            btn_Voltar.Size = new Size(150, 101);
             btn_Voltar.TabIndex = 11;
             btn_Voltar.Text = "VOLTAR";
             btn_Voltar.UseVisualStyleBackColor = false;
@@ -71,11 +73,12 @@
             // 
             // btn_Salvar
             // 
-            btn_Salvar.BackColor = Color.Green;
+            btn_Salvar.BackColor = Color.Goldenrod;
             btn_Salvar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Salvar.Location = new Point(608, 170);
+            btn_Salvar.Location = new Point(695, 227);
+            btn_Salvar.Margin = new Padding(3, 4, 3, 4);
             btn_Salvar.Name = "btn_Salvar";
-            btn_Salvar.Size = new Size(131, 76);
+            btn_Salvar.Size = new Size(150, 101);
             btn_Salvar.TabIndex = 12;
             btn_Salvar.Text = "SALVAR";
             btn_Salvar.UseVisualStyleBackColor = false;
@@ -83,11 +86,12 @@
             // 
             // btn_Limpar
             // 
-            btn_Limpar.BackColor = Color.Yellow;
+            btn_Limpar.BackColor = Color.DarkGoldenrod;
             btn_Limpar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Limpar.Location = new Point(608, 300);
+            btn_Limpar.Location = new Point(695, 400);
+            btn_Limpar.Margin = new Padding(3, 4, 3, 4);
             btn_Limpar.Name = "btn_Limpar";
-            btn_Limpar.Size = new Size(131, 76);
+            btn_Limpar.Size = new Size(150, 101);
             btn_Limpar.TabIndex = 13;
             btn_Limpar.Text = "LIMPAR";
             btn_Limpar.UseVisualStyleBackColor = false;
@@ -96,56 +100,60 @@
             // lbl_Placa
             // 
             lbl_Placa.AutoSize = true;
-            lbl_Placa.Location = new Point(12, 325);
+            lbl_Placa.Location = new Point(14, 433);
             lbl_Placa.Name = "lbl_Placa";
-            lbl_Placa.Size = new Size(44, 15);
+            lbl_Placa.Size = new Size(53, 20);
             lbl_Placa.TabIndex = 15;
             lbl_Placa.Text = "PLACA";
             // 
             // lbl_Cor
             // 
             lbl_Cor.AutoSize = true;
-            lbl_Cor.Location = new Point(12, 232);
+            lbl_Cor.Location = new Point(14, 309);
             lbl_Cor.Name = "lbl_Cor";
-            lbl_Cor.Size = new Size(31, 15);
+            lbl_Cor.Size = new Size(38, 20);
             lbl_Cor.TabIndex = 16;
             lbl_Cor.Text = "COR";
             // 
             // lbl_Modelo
             // 
             lbl_Modelo.AutoSize = true;
-            lbl_Modelo.Location = new Point(12, 136);
+            lbl_Modelo.Location = new Point(14, 181);
             lbl_Modelo.Name = "lbl_Modelo";
-            lbl_Modelo.Size = new Size(56, 15);
+            lbl_Modelo.Size = new Size(69, 20);
             lbl_Modelo.TabIndex = 17;
             lbl_Modelo.Text = "MODELO";
             // 
             // txt_Cor
             // 
-            txt_Cor.Location = new Point(12, 250);
+            txt_Cor.Location = new Point(14, 333);
+            txt_Cor.Margin = new Padding(3, 4, 3, 4);
             txt_Cor.Name = "txt_Cor";
-            txt_Cor.Size = new Size(400, 23);
+            txt_Cor.Size = new Size(457, 27);
             txt_Cor.TabIndex = 18;
             // 
             // txt_Placa
             // 
-            txt_Placa.Location = new Point(12, 343);
+            txt_Placa.Location = new Point(14, 457);
+            txt_Placa.Margin = new Padding(3, 4, 3, 4);
             txt_Placa.Name = "txt_Placa";
-            txt_Placa.Size = new Size(400, 23);
+            txt_Placa.Size = new Size(457, 27);
             txt_Placa.TabIndex = 19;
             // 
             // txt_Modelo
             // 
-            txt_Modelo.Location = new Point(12, 154);
+            txt_Modelo.Location = new Point(14, 205);
+            txt_Modelo.Margin = new Padding(3, 4, 3, 4);
             txt_Modelo.Name = "txt_Modelo";
-            txt_Modelo.Size = new Size(400, 23);
+            txt_Modelo.Size = new Size(457, 27);
             txt_Modelo.TabIndex = 21;
             // 
             // Formulario_Veiculos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Cornsilk;
+            ClientSize = new Size(914, 600);
             Controls.Add(txt_Modelo);
             Controls.Add(txt_Placa);
             Controls.Add(txt_Cor);
@@ -157,6 +165,7 @@
             Controls.Add(btn_Voltar);
             Controls.Add(txt_Marca);
             Controls.Add(lbl_Marca);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Formulario_Veiculos";
             Text = "Formulario_Veiculos";
             Load += Formulario_Veiculos_Load;

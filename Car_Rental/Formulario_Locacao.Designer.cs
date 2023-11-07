@@ -51,9 +51,9 @@
             // 
             // btn_Voltar
             // 
-            btn_Voltar.BackColor = Color.Orange;
+            btn_Voltar.BackColor = Color.SkyBlue;
             btn_Voltar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Voltar.Location = new Point(183, 302);
+            btn_Voltar.Location = new Point(197, 302);
             btn_Voltar.Margin = new Padding(3, 4, 3, 4);
             btn_Voltar.Name = "btn_Voltar";
             btn_Voltar.Size = new Size(134, 57);
@@ -64,9 +64,9 @@
             // 
             // btn_Salvar
             // 
-            btn_Salvar.BackColor = Color.Green;
+            btn_Salvar.BackColor = Color.LightSteelBlue;
             btn_Salvar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Salvar.Location = new Point(358, 302);
+            btn_Salvar.Location = new Point(377, 302);
             btn_Salvar.Margin = new Padding(3, 4, 3, 4);
             btn_Salvar.Name = "btn_Salvar";
             btn_Salvar.Size = new Size(130, 57);
@@ -77,7 +77,7 @@
             // 
             // btn_Limpar
             // 
-            btn_Limpar.BackColor = Color.Yellow;
+            btn_Limpar.BackColor = Color.SteelBlue;
             btn_Limpar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Limpar.Location = new Point(21, 302);
             btn_Limpar.Margin = new Padding(3, 4, 3, 4);
