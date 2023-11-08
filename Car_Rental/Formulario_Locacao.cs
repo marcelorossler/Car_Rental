@@ -1,6 +1,9 @@
 ﻿using Npgsql;
 using System.Data;
 using System.Globalization;
+using System.Numerics;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace Car_Rental
 {
@@ -75,35 +78,28 @@ namespace Car_Rental
             // objeto de conexao
             NpgsqlConnection con = new NpgsqlConnection(stringConexao);
 
-            DateTime dataInicio;
-            bool sucesso = DateTime.TryParseExact(maskedTextBox1.Text, "ddMMyyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dataInicio);
 
-            if (sucesso == false)
-            {
-                // A string não pôde ser convertida para DateTime.
-            }
+            decimal valorTotal = decimal.Parse(mktxt_Valor_Total.Text.Trim().Replace("R$", "").Replace(".",","));
+            decimal valorDiaria = decimal.Parse(mktxt_Valor_Diaria.Text.Trim().Replace("R$","").Replace(".",","));
 
-            DateTime dataTermino;
-            bool correto = DateTime.TryParseExact(maskedTextBox1.Text, "ddMMyyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dataTermino);
-
-            if (correto == false)
-            {
-                // A string não pôde ser convertida para DateTime.
-            }
 
             // instrucao sql para o banco de dados
-            string instrucao = "insert into  locacao ( veiculo_escolhido,seguro_opcional,nome_cliente,valor_da_diaria,valor_total,inicio_locacao,termino_locacao,placa_veiculo) " +
-                "values ('" + comboVeiculo.Text + "','" + txt_Seguro_Opcional.Text + "','" + comboCliente.Text + "'," +
-                "'" + mktxt_Valor_Diaria.Text + "','" + mktxt_Valor_Total.Text + "','" + dataInicio.ToShortDateString() + "'," +
-                "'" + dataTermino.ToShortDateString() + "','" + mktxt_Placa.Text + "'";
+            string instrucao = "";
 
             if (CodigoLocacao > 0)
             {
-                instrucao = $"update locacao set codigo  = '{comboVeiculo.Text}', seguro_opcional = '{txt_Seguro_Opcional.Text}'," +
-                    $" nome_cliente = '{comboCliente.Text}' , valor_da_diaria = '{mktxt_Valor_Diaria.Text}' , valor_total = '{mktxt_Valor_Total}'" +
-                    $" inicio_locacao = '{maskedTextBox1}', termino_locacao = '{mktxt_Termino_Locacao.Text}'" +
-                    $" where codigo = '{CodigoLocacao}' , placa_veiculo = '{mktxt_Placa.Text}'";
+                instrucao = $"update locacao set veiculo_escolhido = '{comboVeiculo.Text}', seguro_opcional = '{txt_Seguro_Opcional.Text}'" +
+                    $" nome_cliente = '{comboCliente.Text}' , valor_da_diaria = '{valorDiaria}' , valor_total = '{valorTotal}'" +
+                    $" inicio_locacao = '{maskedTextBox1.Text}', termino_locacao = '{mktxt_Termino_Locacao.Text}', placa_veiculo ='{mktxt_Placa.Text}'"+
+                    $" where codigo = '{CodigoLocacao}'";
             }
+            else
+            {
+                instrucao="insert into locacao(veiculo_escolhido,seguro_opcional,nome_cliente,valor_da_diaria,valor_total,inicio_locacao,termino_locacao,placa_veiculo)"+
+                "values ('" + comboVeiculo.Text + "','" + txt_Seguro_Opcional.Text + "','" + comboCliente.Text + "','" + valorDiaria + "'," +
+                "'" + valorTotal + "','" + maskedTextBox1.Text + "','" + mktxt_Termino_Locacao.Text + "','" + mktxt_Placa.Text + "')";
+            }
+
             NpgsqlCommand cmd = new NpgsqlCommand(instrucao, con);
 
             con.Open();
@@ -129,6 +125,9 @@ namespace Car_Rental
 
         private void Formulario_Locacao_Load(object sender, EventArgs e)
         {
+            maskedTextBox1.Text = DateTime.Now.ToShortDateString();
+            mktxt_Termino_Locacao.Text = DateTime.Now.ToShortDateString();
+
             CarregaClientes();
             CarregaVeiculo();
 
@@ -136,8 +135,8 @@ namespace Car_Rental
             {
                 AlterarRegistro();
             }
-        }
 
+        }
         private void CarregaVeiculo()
         {
             // string de conexao
@@ -148,7 +147,8 @@ namespace Car_Rental
             NpgsqlConnection con = new NpgsqlConnection(stringConexao);
 
             // instrucao sql para o banco de dados
-            string instrucao = "SELECT marca ||'    - '|| modelo ||' -    '|| placa as descricao, codigo FROM veiculo ";
+            string instrucao = "select marca || '  ' || modelo || '  ' || placa as descricao from veiculo where placa not in (select placa_veiculo from locacao " +
+            "where inicio_locacao >= '" + maskedTextBox1.Text + "' and termino_locacao <= '" + mktxt_Termino_Locacao.Text + "')";
 
             DataTable dt = new DataTable(); // tabela virtual pra armazenar resultado
 
@@ -160,7 +160,7 @@ namespace Car_Rental
 
             comboVeiculo.DataSource = dt;
             comboVeiculo.DisplayMember = "descricao";
-            comboVeiculo.ValueMember = "codigo";
+            comboVeiculo.ValueMember = "descricao";
         }
 
         private void CarregaClientes()
@@ -188,9 +188,5 @@ namespace Car_Rental
             comboCliente.ValueMember = "codigo";
         }
 
-        private void comboCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

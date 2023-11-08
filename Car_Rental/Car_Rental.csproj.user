@@ -16,9 +16,6 @@
     <Compile Update="Formulario_Veiculos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form_Consulta_Financeiro.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="frm_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -152,21 +152,21 @@
             // 
             // mktxt_Termino_Locacao
             // 
-            mktxt_Termino_Locacao.Location = new Point(286, 239);
+            mktxt_Termino_Locacao.Location = new Point(279, 239);
             mktxt_Termino_Locacao.Margin = new Padding(3, 4, 3, 4);
             mktxt_Termino_Locacao.Mask = "00/00/0000";
             mktxt_Termino_Locacao.Name = "mktxt_Termino_Locacao";
-            mktxt_Termino_Locacao.Size = new Size(79, 27);
+            mktxt_Termino_Locacao.Size = new Size(86, 27);
             mktxt_Termino_Locacao.TabIndex = 29;
             mktxt_Termino_Locacao.ValidatingType = typeof(DateTime);
             // 
             // mktxt_Valor_Diaria
             // 
-            mktxt_Valor_Diaria.Location = new Point(157, 239);
+            mktxt_Valor_Diaria.Location = new Point(146, 239);
             mktxt_Valor_Diaria.Margin = new Padding(3, 4, 3, 4);
             mktxt_Valor_Diaria.Mask = "$000,00";
             mktxt_Valor_Diaria.Name = "mktxt_Valor_Diaria";
-            mktxt_Valor_Diaria.Size = new Size(67, 27);
+            mktxt_Valor_Diaria.Size = new Size(87, 27);
             mktxt_Valor_Diaria.TabIndex = 30;
             mktxt_Valor_Diaria.ValidatingType = typeof(DateTime);
             // 
@@ -181,21 +181,21 @@
             // 
             // mktxt_Valor_Total
             // 
-            mktxt_Valor_Total.Location = new Point(421, 239);
+            mktxt_Valor_Total.Location = new Point(409, 237);
             mktxt_Valor_Total.Margin = new Padding(3, 4, 3, 4);
             mktxt_Valor_Total.Mask = "$0000,00";
             mktxt_Valor_Total.Name = "mktxt_Valor_Total";
-            mktxt_Valor_Total.Size = new Size(67, 27);
+            mktxt_Valor_Total.Size = new Size(81, 27);
             mktxt_Valor_Total.TabIndex = 31;
             mktxt_Valor_Total.ValidatingType = typeof(DateTime);
             // 
             // mktxt_Placa
             // 
-            mktxt_Placa.Location = new Point(427, 147);
+            mktxt_Placa.Location = new Point(409, 147);
             mktxt_Placa.Margin = new Padding(3, 4, 3, 4);
             mktxt_Placa.Mask = "AAA 0A00";
             mktxt_Placa.Name = "mktxt_Placa";
-            mktxt_Placa.Size = new Size(61, 27);
+            mktxt_Placa.Size = new Size(81, 27);
             mktxt_Placa.TabIndex = 32;
             mktxt_Placa.ValidatingType = typeof(DateTime);
             // 
@@ -214,7 +214,7 @@
             maskedTextBox1.Margin = new Padding(3, 4, 3, 4);
             maskedTextBox1.Mask = "00/00/0000";
             maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(79, 27);
+            maskedTextBox1.Size = new Size(88, 27);
             maskedTextBox1.TabIndex = 34;
             maskedTextBox1.ValidatingType = typeof(DateTime);
             // 

@@ -50,7 +50,6 @@
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
             btn_Limpar = new Button();
-            btn_Criar_Locacao = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -58,7 +57,7 @@
             // 
             btn_Voltar.BackColor = Color.White;
             btn_Voltar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Voltar.Location = new Point(14, 448);
+            btn_Voltar.Location = new Point(89, 448);
             btn_Voltar.Margin = new Padding(3, 4, 3, 4);
             btn_Voltar.Name = "btn_Voltar";
             btn_Voltar.Size = new Size(205, 53);
@@ -157,7 +156,7 @@
             // 
             btn_Consultar.BackColor = Color.White;
             btn_Consultar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Consultar.Location = new Point(317, 448);
+            btn_Consultar.Location = new Point(451, 448);
             btn_Consultar.Margin = new Padding(3, 4, 3, 4);
             btn_Consultar.Name = "btn_Consultar";
             btn_Consultar.Size = new Size(205, 53);
@@ -254,7 +253,7 @@
             // 
             btn_Limpar.BackColor = Color.White;
             btn_Limpar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Limpar.Location = new Point(900, 448);
+            btn_Limpar.Location = new Point(797, 448);
             btn_Limpar.Margin = new Padding(3, 4, 3, 4);
             btn_Limpar.Name = "btn_Limpar";
             btn_Limpar.Size = new Size(205, 53);
@@ -263,26 +262,12 @@
             btn_Limpar.UseVisualStyleBackColor = false;
             btn_Limpar.Click += btn_Limpar_Click;
             // 
-            // btn_Criar_Locacao
-            // 
-            btn_Criar_Locacao.BackColor = Color.White;
-            btn_Criar_Locacao.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Criar_Locacao.Location = new Point(610, 448);
-            btn_Criar_Locacao.Margin = new Padding(3, 4, 3, 4);
-            btn_Criar_Locacao.Name = "btn_Criar_Locacao";
-            btn_Criar_Locacao.Size = new Size(205, 53);
-            btn_Criar_Locacao.TabIndex = 48;
-            btn_Criar_Locacao.Text = "Criar Locação";
-            btn_Criar_Locacao.UseVisualStyleBackColor = false;
-            btn_Criar_Locacao.Click += btn_Criar_Locacao_Click;
-            // 
             // financeiro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightBlue;
             ClientSize = new Size(1152, 533);
-            Controls.Add(btn_Criar_Locacao);
             Controls.Add(btn_Limpar);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
@@ -328,6 +313,5 @@
         private DataGridViewTextBoxColumn seguro_opicional;
         private DataGridViewTextBoxColumn termino_locacao;
         private DataGridViewTextBoxColumn valor_total;
-        private Button btn_Criar_Locacao;
     }
 }
