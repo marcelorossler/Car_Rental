@@ -39,7 +39,7 @@ namespace Car_Rental
 
                 comboVeiculo.Text = dt.Rows[0]["veiculo_escolhido"].ToString();
                 comboCliente.Text = dt.Rows[0]["nome_cliente"].ToString();
-                txt_Seguro_Opcional.Text = dt.Rows[0]["seguro_opcional"].ToString();
+                checkBoxSeguro.Checked = dt.Rows[0]["seguro_opcional"].ToString() == "sim" ? true : false;
                 maskedTextBox1.Text = dt.Rows[0]["inicio_locacao"].ToString();
 
                 mktxt_Termino_Locacao.Text = dt.Rows[0]["termino_locacao"].ToString();
@@ -61,7 +61,7 @@ namespace Car_Rental
 
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
-            txt_Seguro_Opcional.Text = "";
+            checkBoxSeguro.Checked = false;
             maskedTextBox1.Text = "";
             mktxt_Termino_Locacao.Text = "";
             mktxt_Valor_Diaria.Text = "";
@@ -79,24 +79,28 @@ namespace Car_Rental
             NpgsqlConnection con = new NpgsqlConnection(stringConexao);
 
 
-            decimal valorTotal = decimal.Parse(mktxt_Valor_Total.Text.Trim().Replace("R$", "").Replace(".",","));
-            decimal valorDiaria = decimal.Parse(mktxt_Valor_Diaria.Text.Trim().Replace("R$","").Replace(".",","));
+            decimal valorTotal = decimal.Parse(mktxt_Valor_Total.Text.Trim().Replace("R$", " ").Replace(".", ","));
+            decimal valorDiaria = decimal.Parse(mktxt_Valor_Diaria.Text.Trim().Replace("R$", " ").Replace(".", ","));
 
+            string seguro = checkBoxSeguro.Checked ? "Sim" : "Nao";
+
+            string instrucao = "insert into tabela(seguro)" +
+                "values (" + seguro + ")";
 
             // instrucao sql para o banco de dados
-            string instrucao = "";
+            instrucao = "";
 
             if (CodigoLocacao > 0)
             {
-                instrucao = $"update locacao set veiculo_escolhido = '{comboVeiculo.Text}', seguro_opcional = '{txt_Seguro_Opcional.Text}'" +
+                instrucao = $"update locacao set veiculo_escolhido = '{comboVeiculo.Text}', seguro_opcional = '{seguro}'" +
                     $" nome_cliente = '{comboCliente.Text}' , valor_da_diaria = '{valorDiaria}' , valor_total = '{valorTotal}'" +
-                    $" inicio_locacao = '{maskedTextBox1.Text}', termino_locacao = '{mktxt_Termino_Locacao.Text}', placa_veiculo ='{mktxt_Placa.Text}'"+
+                    $" inicio_locacao = '{maskedTextBox1.Text}', termino_locacao = '{mktxt_Termino_Locacao.Text}', placa_veiculo ='{mktxt_Placa.Text}'" +
                     $" where codigo = '{CodigoLocacao}'";
             }
             else
             {
-                instrucao="insert into locacao(veiculo_escolhido,seguro_opcional,nome_cliente,valor_da_diaria,valor_total,inicio_locacao,termino_locacao,placa_veiculo)"+
-                "values ('" + comboVeiculo.Text + "','" + txt_Seguro_Opcional.Text + "','" + comboCliente.Text + "','" + valorDiaria + "'," +
+                instrucao = "insert into locacao(veiculo_escolhido,seguro_opcional,nome_cliente,valor_da_diaria,valor_total,inicio_locacao,termino_locacao,placa_veiculo)" +
+                "values ('" + comboVeiculo.Text + "','" + seguro + "','" + comboCliente.Text + "','" + valorDiaria + "'," +
                 "'" + valorTotal + "','" + maskedTextBox1.Text + "','" + mktxt_Termino_Locacao.Text + "','" + mktxt_Placa.Text + "')";
             }
 
@@ -188,5 +192,19 @@ namespace Car_Rental
             comboCliente.ValueMember = "codigo";
         }
 
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void comboCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonNao_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

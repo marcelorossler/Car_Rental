@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            btn_Cadastrar = new Button();
+            btn_Alterar_Dados = new Button();
+            btn_Voltar = new Button();
+            btn_Excluir = new Button();
             codigo = new DataGridViewTextBoxColumn();
             nome_cliente = new DataGridViewTextBoxColumn();
             placa_veiculo = new DataGridViewTextBoxColumn();
@@ -38,10 +42,6 @@
             seguro_opicional = new DataGridViewTextBoxColumn();
             termino_locacao = new DataGridViewTextBoxColumn();
             valor_total = new DataGridViewTextBoxColumn();
-            btn_Cadastrar = new Button();
-            btn_Alterar_Dados = new Button();
-            btn_Voltar = new Button();
-            btn_Excluir = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -54,9 +54,61 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1100, 236);
+            dataGridView1.Size = new Size(1135, 236);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // btn_Cadastrar
+            // 
+            btn_Cadastrar.BackColor = Color.Peru;
+            btn_Cadastrar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Cadastrar.Location = new Point(333, 319);
+            btn_Cadastrar.Margin = new Padding(3, 4, 3, 4);
+            btn_Cadastrar.Name = "btn_Cadastrar";
+            btn_Cadastrar.Size = new Size(210, 83);
+            btn_Cadastrar.TabIndex = 1;
+            btn_Cadastrar.Text = "Cadastrar Novo";
+            btn_Cadastrar.UseVisualStyleBackColor = false;
+            btn_Cadastrar.Click += btn_Cadastrar_Click;
+            // 
+            // btn_Alterar_Dados
+            // 
+            btn_Alterar_Dados.BackColor = Color.SandyBrown;
+            btn_Alterar_Dados.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Alterar_Dados.Location = new Point(629, 319);
+            btn_Alterar_Dados.Margin = new Padding(3, 4, 3, 4);
+            btn_Alterar_Dados.Name = "btn_Alterar_Dados";
+            btn_Alterar_Dados.Size = new Size(210, 83);
+            btn_Alterar_Dados.TabIndex = 2;
+            btn_Alterar_Dados.Text = "Alterar Dados";
+            btn_Alterar_Dados.UseVisualStyleBackColor = false;
+            btn_Alterar_Dados.Click += btn_Alterar_Dados_Click;
+            // 
+            // btn_Voltar
+            // 
+            btn_Voltar.BackColor = Color.Chocolate;
+            btn_Voltar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Voltar.Location = new Point(47, 319);
+            btn_Voltar.Margin = new Padding(3, 4, 3, 4);
+            btn_Voltar.Name = "btn_Voltar";
+            btn_Voltar.Size = new Size(210, 83);
+            btn_Voltar.TabIndex = 3;
+            btn_Voltar.Text = "Voltar";
+            btn_Voltar.UseVisualStyleBackColor = false;
+            btn_Voltar.Click += btn_Voltar_Click;
+            // 
+            // btn_Excluir
+            // 
+            btn_Excluir.BackColor = Color.PeachPuff;
+            btn_Excluir.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Excluir.Location = new Point(910, 319);
+            btn_Excluir.Margin = new Padding(3, 4, 3, 4);
+            btn_Excluir.Name = "btn_Excluir";
+            btn_Excluir.Size = new Size(210, 83);
+            btn_Excluir.TabIndex = 4;
+            btn_Excluir.Text = "Excluir";
+            btn_Excluir.UseVisualStyleBackColor = false;
+            btn_Excluir.Click += btn_Excluir_Click;
             // 
             // codigo
             // 
@@ -80,7 +132,7 @@
             placa_veiculo.HeaderText = "Placa do Veículo";
             placa_veiculo.MinimumWidth = 6;
             placa_veiculo.Name = "placa_veiculo";
-            placa_veiculo.Width = 85;
+            placa_veiculo.Width = 95;
             // 
             // veiculo_escolhido
             // 
@@ -128,66 +180,14 @@
             valor_total.HeaderText = "Valor Total";
             valor_total.MinimumWidth = 6;
             valor_total.Name = "valor_total";
-            valor_total.Width = 85;
-            // 
-            // btn_Cadastrar
-            // 
-            btn_Cadastrar.BackColor = Color.Peru;
-            btn_Cadastrar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Cadastrar.Location = new Point(327, 319);
-            btn_Cadastrar.Margin = new Padding(3, 4, 3, 4);
-            btn_Cadastrar.Name = "btn_Cadastrar";
-            btn_Cadastrar.Size = new Size(188, 83);
-            btn_Cadastrar.TabIndex = 1;
-            btn_Cadastrar.Text = "Cadastrar Novo";
-            btn_Cadastrar.UseVisualStyleBackColor = false;
-            btn_Cadastrar.Click += btn_Cadastrar_Click;
-            // 
-            // btn_Alterar_Dados
-            // 
-            btn_Alterar_Dados.BackColor = Color.SandyBrown;
-            btn_Alterar_Dados.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Alterar_Dados.Location = new Point(604, 319);
-            btn_Alterar_Dados.Margin = new Padding(3, 4, 3, 4);
-            btn_Alterar_Dados.Name = "btn_Alterar_Dados";
-            btn_Alterar_Dados.Size = new Size(196, 83);
-            btn_Alterar_Dados.TabIndex = 2;
-            btn_Alterar_Dados.Text = "Alterar Dados";
-            btn_Alterar_Dados.UseVisualStyleBackColor = false;
-            btn_Alterar_Dados.Click += btn_Alterar_Dados_Click;
-            // 
-            // btn_Voltar
-            // 
-            btn_Voltar.BackColor = Color.Chocolate;
-            btn_Voltar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Voltar.Location = new Point(31, 319);
-            btn_Voltar.Margin = new Padding(3, 4, 3, 4);
-            btn_Voltar.Name = "btn_Voltar";
-            btn_Voltar.Size = new Size(196, 83);
-            btn_Voltar.TabIndex = 3;
-            btn_Voltar.Text = "Voltar";
-            btn_Voltar.UseVisualStyleBackColor = false;
-            btn_Voltar.Click += btn_Voltar_Click;
-            // 
-            // btn_Excluir
-            // 
-            btn_Excluir.BackColor = Color.PeachPuff;
-            btn_Excluir.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Excluir.Location = new Point(879, 319);
-            btn_Excluir.Margin = new Padding(3, 4, 3, 4);
-            btn_Excluir.Name = "btn_Excluir";
-            btn_Excluir.Size = new Size(211, 83);
-            btn_Excluir.TabIndex = 4;
-            btn_Excluir.Text = "Excluir";
-            btn_Excluir.UseVisualStyleBackColor = false;
-            btn_Excluir.Click += btn_Excluir_Click;
+            valor_total.Width = 105;
             // 
             // Locacao
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SeaShell;
-            ClientSize = new Size(1129, 427);
+            ClientSize = new Size(1167, 427);
             Controls.Add(btn_Excluir);
             Controls.Add(btn_Voltar);
             Controls.Add(btn_Alterar_Dados);

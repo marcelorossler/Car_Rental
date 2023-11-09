@@ -33,8 +33,6 @@
             btn_Limpar = new Button();
             lbl_Veiculo = new Label();
             lbl_Termino_Locacao = new Label();
-            txt_Seguro_Opcional = new TextBox();
-            lbl_Seguro_Opcional = new Label();
             lbl_Nome_Cliente = new Label();
             lbl_Inicio_Locacao = new Label();
             lbl_Valor_Diaria = new Label();
@@ -47,6 +45,9 @@
             maskedTextBox1 = new MaskedTextBox();
             comboCliente = new ComboBox();
             comboVeiculo = new ComboBox();
+            checkBoxSeguro = new CheckBox();
+            lblSeguro = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // btn_Voltar
@@ -105,23 +106,6 @@
             lbl_Termino_Locacao.Size = new Size(122, 20);
             lbl_Termino_Locacao.TabIndex = 16;
             lbl_Termino_Locacao.Text = "Término Locação";
-            // 
-            // txt_Seguro_Opcional
-            // 
-            txt_Seguro_Opcional.Location = new Point(409, 62);
-            txt_Seguro_Opcional.Margin = new Padding(3, 4, 3, 4);
-            txt_Seguro_Opcional.Name = "txt_Seguro_Opcional";
-            txt_Seguro_Opcional.Size = new Size(81, 27);
-            txt_Seguro_Opcional.TabIndex = 19;
-            // 
-            // lbl_Seguro_Opcional
-            // 
-            lbl_Seguro_Opcional.AutoSize = true;
-            lbl_Seguro_Opcional.Location = new Point(404, 38);
-            lbl_Seguro_Opcional.Name = "lbl_Seguro_Opcional";
-            lbl_Seguro_Opcional.Size = new Size(104, 20);
-            lbl_Seguro_Opcional.TabIndex = 18;
-            lbl_Seguro_Opcional.Text = "Opcao Seguro";
             // 
             // lbl_Nome_Cliente
             // 
@@ -191,7 +175,7 @@
             // 
             // mktxt_Placa
             // 
-            mktxt_Placa.Location = new Point(409, 147);
+            mktxt_Placa.Location = new Point(412, 62);
             mktxt_Placa.Margin = new Padding(3, 4, 3, 4);
             mktxt_Placa.Mask = "AAA 0A00";
             mktxt_Placa.Name = "mktxt_Placa";
@@ -202,7 +186,7 @@
             // lbl_Placa
             // 
             lbl_Placa.AutoSize = true;
-            lbl_Placa.Location = new Point(402, 123);
+            lbl_Placa.Location = new Point(225, 72);
             lbl_Placa.Name = "lbl_Placa";
             lbl_Placa.Size = new Size(118, 20);
             lbl_Placa.TabIndex = 33;
@@ -217,6 +201,7 @@
             maskedTextBox1.Size = new Size(88, 27);
             maskedTextBox1.TabIndex = 34;
             maskedTextBox1.ValidatingType = typeof(DateTime);
+            maskedTextBox1.MaskInputRejected += maskedTextBox1_MaskInputRejected;
             // 
             // comboCliente
             // 
@@ -226,6 +211,7 @@
             comboCliente.Name = "comboCliente";
             comboCliente.Size = new Size(351, 28);
             comboCliente.TabIndex = 35;
+            comboCliente.SelectedIndexChanged += comboCliente_SelectedIndexChanged;
             // 
             // comboVeiculo
             // 
@@ -233,14 +219,45 @@
             comboVeiculo.Location = new Point(14, 147);
             comboVeiculo.Margin = new Padding(3, 4, 3, 4);
             comboVeiculo.Name = "comboVeiculo";
-            comboVeiculo.Size = new Size(351, 28);
+            comboVeiculo.Size = new Size(317, 28);
             comboVeiculo.TabIndex = 36;
+            // 
+            // checkBoxSeguro
+            // 
+            checkBoxSeguro.AutoSize = true;
+            checkBoxSeguro.Location = new Point(406, 160);
+            checkBoxSeguro.Name = "checkBoxSeguro";
+            checkBoxSeguro.Size = new Size(78, 24);
+            checkBoxSeguro.TabIndex = 37;
+            checkBoxSeguro.Text = "Aceitar";
+            checkBoxSeguro.UseVisualStyleBackColor = true;
+            // 
+            // lblSeguro
+            // 
+            lblSeguro.AutoSize = true;
+            lblSeguro.Location = new Point(357, 134);
+            lblSeguro.Name = "lblSeguro";
+            lblSeguro.Size = new Size(183, 20);
+            lblSeguro.TabIndex = 38;
+            lblSeguro.Text = "Assinale Opção de Seguro";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(412, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(96, 20);
+            label1.TabIndex = 39;
+            label1.Text = "Placa Veículo";
             // 
             // Formulario_Locacao
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(543, 388);
+            Controls.Add(label1);
+            Controls.Add(lblSeguro);
+            Controls.Add(checkBoxSeguro);
             Controls.Add(comboVeiculo);
             Controls.Add(comboCliente);
             Controls.Add(maskedTextBox1);
@@ -253,8 +270,6 @@
             Controls.Add(lbl_Valor_Diaria);
             Controls.Add(lbl_Inicio_Locacao);
             Controls.Add(lbl_Nome_Cliente);
-            Controls.Add(txt_Seguro_Opcional);
-            Controls.Add(lbl_Seguro_Opcional);
             Controls.Add(lbl_Termino_Locacao);
             Controls.Add(lbl_Veiculo);
             Controls.Add(btn_Limpar);
@@ -275,8 +290,6 @@
         private Button btn_Limpar;
         private Label lbl_Veiculo;
         private Label lbl_Termino_Locacao;
-        private TextBox txt_Seguro_Opcional;
-        private Label lbl_Seguro_Opcional;
         private Label lbl_Nome_Cliente;
         private Label lbl_Inicio_Locacao;
         private Label lbl_Valor_Diaria;
@@ -290,5 +303,8 @@
         private MaskedTextBox maskedTextBox1;
         private ComboBox comboCliente;
         private ComboBox comboVeiculo;
+        private CheckBox checkBoxSeguro;
+        private Label lblSeguro;
+        private Label label1;
     }
 }
