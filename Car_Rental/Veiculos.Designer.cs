@@ -50,7 +50,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(776, 200);
+            dataGridView1.Size = new Size(797, 200);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -151,7 +151,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(808, 422);
+            ClientSize = new Size(826, 422);
             Controls.Add(btn_Excluir);
             Controls.Add(btn_Voltar);
             Controls.Add(btn_Alterar);

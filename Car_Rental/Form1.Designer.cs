@@ -44,7 +44,7 @@
             btn_Consulta_Clientes.Name = "btn_Consulta_Clientes";
             btn_Consulta_Clientes.Size = new Size(149, 93);
             btn_Consulta_Clientes.TabIndex = 0;
-            btn_Consulta_Clientes.Text = " consultas    CLIENTES";
+            btn_Consulta_Clientes.Text = " consulta/cadastro    CLIENTES";
             btn_Consulta_Clientes.UseVisualStyleBackColor = false;
             btn_Consulta_Clientes.Click += btn_Consulta_Clientes_Click;
             // 
@@ -70,7 +70,7 @@
             btn_Consulta_Veiculos.Name = "btn_Consulta_Veiculos";
             btn_Consulta_Veiculos.Size = new Size(149, 93);
             btn_Consulta_Veiculos.TabIndex = 2;
-            btn_Consulta_Veiculos.Text = "consultas   VEÍCULOS";
+            btn_Consulta_Veiculos.Text = "consulta/cadastro   VEÍCULOS";
             btn_Consulta_Veiculos.UseVisualStyleBackColor = false;
             btn_Consulta_Veiculos.Click += btn_Consulta_Veiculos_Click;
             // 
@@ -96,7 +96,7 @@
             btn_Consulta_Locacoes.Name = "btn_Consulta_Locacoes";
             btn_Consulta_Locacoes.Size = new Size(149, 93);
             btn_Consulta_Locacoes.TabIndex = 4;
-            btn_Consulta_Locacoes.Text = "consultas  LOCAÇÕES";
+            btn_Consulta_Locacoes.Text = "consulta/cadastro LOCAÇÕES";
             btn_Consulta_Locacoes.UseVisualStyleBackColor = false;
             btn_Consulta_Locacoes.Click += btn_Consulta_Locacoes_Click;
             // 

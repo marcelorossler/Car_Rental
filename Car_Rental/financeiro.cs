@@ -47,7 +47,7 @@ namespace Car_Rental
 
                 if (ComboxCliente.SelectedItem != null && ComboxCliente.Text != null)
                 {
-                    instrucao += $" and nome_cliente ilike '%{ComboxCliente.Text}%' ";
+                    instrucao += $" and nome_cliente ilike'%{ComboxCliente.Text}%' ";
                 }
 
                 if (ComboxPlaca.SelectedItem != null && ComboxPlaca.Text != null)

@@ -46,7 +46,7 @@
             btn_Alterar.BackColor = Color.YellowGreen;
             btn_Alterar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Alterar.ForeColor = Color.Black;
-            btn_Alterar.Location = new Point(528, 310);
+            btn_Alterar.Location = new Point(540, 311);
             btn_Alterar.Margin = new Padding(3, 4, 3, 4);
             btn_Alterar.Name = "btn_Alterar";
             btn_Alterar.Size = new Size(163, 68);
@@ -60,7 +60,7 @@
             btn_Excluir.BackColor = Color.MediumSeaGreen;
             btn_Excluir.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Excluir.ForeColor = Color.Black;
-            btn_Excluir.Location = new Point(756, 310);
+            btn_Excluir.Location = new Point(770, 311);
             btn_Excluir.Margin = new Padding(3, 4, 3, 4);
             btn_Excluir.Name = "btn_Excluir";
             btn_Excluir.Size = new Size(167, 68);
@@ -74,7 +74,7 @@
             btn_Incluir.BackColor = Color.OliveDrab;
             btn_Incluir.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Incluir.ForeColor = Color.Black;
-            btn_Incluir.Location = new Point(290, 311);
+            btn_Incluir.Location = new Point(293, 310);
             btn_Incluir.Margin = new Padding(3, 4, 3, 4);
             btn_Incluir.Name = "btn_Incluir";
             btn_Incluir.Size = new Size(167, 68);
@@ -106,7 +106,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(935, 200);
+            dataGridView1.Size = new Size(954, 200);
             dataGridView1.TabIndex = 9;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -155,7 +155,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(963, 473);
+            ClientSize = new Size(988, 473);
             Controls.Add(dataGridView1);
             Controls.Add(btn_Alterar);
             Controls.Add(btn_Excluir);

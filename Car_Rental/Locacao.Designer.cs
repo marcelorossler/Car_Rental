@@ -124,7 +124,7 @@
             nome_cliente.HeaderText = "Nome Cliente";
             nome_cliente.MinimumWidth = 6;
             nome_cliente.Name = "nome_cliente";
-            nome_cliente.Width = 285;
+            nome_cliente.Width = 255;
             // 
             // placa_veiculo
             // 
@@ -140,7 +140,7 @@
             veiculo_escolhido.HeaderText = "Veículo Escolhido";
             veiculo_escolhido.MinimumWidth = 6;
             veiculo_escolhido.Name = "veiculo_escolhido";
-            veiculo_escolhido.Width = 180;
+            veiculo_escolhido.Width = 225;
             // 
             // inicio_locacao
             // 
@@ -156,7 +156,7 @@
             valor_da_diaria.HeaderText = "Valor da Diária";
             valor_da_diaria.MinimumWidth = 6;
             valor_da_diaria.Name = "valor_da_diaria";
-            valor_da_diaria.Width = 85;
+            valor_da_diaria.Width = 75;
             // 
             // seguro_opicional
             // 
@@ -180,7 +180,7 @@
             valor_total.HeaderText = "Valor Total";
             valor_total.MinimumWidth = 6;
             valor_total.Name = "valor_total";
-            valor_total.Width = 105;
+            valor_total.Width = 95;
             // 
             // Locacao
             // 
