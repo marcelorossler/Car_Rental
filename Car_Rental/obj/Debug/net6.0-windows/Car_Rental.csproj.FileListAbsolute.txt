@@ -67,7 +67,6 @@ C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\Car_Rental.frm_
 C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\Car_Rental.Formulario_Clientes.resources
 C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\Car_Rental.Formulario_Locacao.resources
 C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\Car_Rental.Formulario_Veiculos.resources
-C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\Car_Rental.Form_Consulta_Financeiro.resources
 C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\Car_Rental.frm_Clientes.resources
 C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\Car_Rental.Locacao.resources
 C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\Car_Rental.Veiculos.resources

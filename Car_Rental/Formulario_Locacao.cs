@@ -38,7 +38,7 @@ namespace Car_Rental
                 da.Fill(dt); // preenche data table com resultado
 
                 comboVeiculo.Text = dt.Rows[0]["veiculo_escolhido"].ToString();
-                comboCliente.Text = dt.Rows[0]["nome_cliente"].ToString();
+                txt_CadstrarNome.Text = dt.Rows[0]["nome_cliente"].ToString();
                 checkBoxSeguro.Checked = dt.Rows[0]["seguro_opcional"].ToString() == "sim" ? true : false;
                 maskedTextBox1.Text = dt.Rows[0]["inicio_locacao"].ToString();
 
@@ -93,14 +93,14 @@ namespace Car_Rental
             if (CodigoLocacao > 0)
             {
                 instrucao = $"update locacao set veiculo_escolhido = '{comboVeiculo.Text}', seguro_opcional = '{seguro}'" +
-                    $" nome_cliente = '{comboCliente.Text}' , valor_da_diaria = '{valorDiaria}' , valor_total = '{valorTotal}'" +
+                    $" nome_cliente = '{txt_CadstrarNome.Text}' , valor_da_diaria = '{valorDiaria}' , valor_total = '{valorTotal}'" +
                     $" inicio_locacao = '{maskedTextBox1.Text}', termino_locacao = '{mktxt_Termino_Locacao.Text}', placa_veiculo ='{mktxt_Placa.Text}'" +
                     $" where codigo = '{CodigoLocacao}'";
             }
             else
             {
                 instrucao = "insert into locacao(veiculo_escolhido,seguro_opcional,nome_cliente,valor_da_diaria,valor_total,inicio_locacao,termino_locacao,placa_veiculo)" +
-                "values ('" + comboVeiculo.Text + "','" + seguro + "','" + comboCliente.Text + "','" + valorDiaria + "'," +
+                "values ('" + comboVeiculo.Text + "','" + seguro + "','" + txt_CadstrarNome.Text + "','" + valorDiaria + "'," +
                 "'" + valorTotal + "','" + maskedTextBox1.Text + "','" + mktxt_Termino_Locacao.Text + "','" + mktxt_Placa.Text + "')";
             }
 
@@ -202,9 +202,6 @@ namespace Car_Rental
 
         }
 
-        private void radioButtonNao_CheckedChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }
