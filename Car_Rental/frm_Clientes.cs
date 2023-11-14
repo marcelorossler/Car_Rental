@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using Npgsql;
 
 namespace Car_Rental
@@ -53,11 +54,30 @@ namespace Car_Rental
                 con.Close(); con.Dispose();
             }
         }
+        private async Task CarregarCliente()
+        {
+            try
+            {
+                HttpClient _httpClient = new HttpClient(); // objeto de retorno
 
+                HttpResponseMessage response = await _httpClient.GetAsync("https://localhost:7188/Cliente"); // indicar endereço endpoint/controller
+                response.EnsureSuccessStatusCode(); // padroniza os codigos
+
+                string responseBody = await response.Content.ReadAsStringAsync(); // executar e traz a resposta
+
+                List<Cliente_Response> cliente = JsonConvert.DeserializeObject<List<Cliente_Response>>(responseBody); // transformo o resultado
+
+                dataGridView1.DataSource = cliente; // carrega na lista da tela
+            }
+            catch
+            {
+            }
+        }
         private void frm_Clientes_Load(object sender, EventArgs e)
         {
+            CarregarCliente();
 
-            // string de conexao
+            /*// string de conexao
             string stringConexao = "Server=localhost; Port=5432; " +
                                 "User Id=postgres; Password=12345678; DataBase=CarRental;";
 
@@ -80,7 +100,7 @@ namespace Car_Rental
             con.Close();
             con.Dispose();
 
-            dataGridView1.DataSource = dt; // carrega na lista da tela
+            dataGridView1.DataSource = dt; // carrega na lista da tela */
         }
 
         private void btn_Excluir_Click(object sender, EventArgs e)

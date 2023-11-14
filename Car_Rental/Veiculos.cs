@@ -1,98 +1,111 @@
-﻿using Npgsql;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Newtonsoft.Json;
+using Npgsql;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Car_Rental
+
+namespace Car_Rental;
+
+public partial class Veiculos : Form
 {
-    public partial class Veiculos : Form
+    public Veiculos()
     {
-        public Veiculos()
+        InitializeComponent();
+    }
+
+    private void Delete()
+    {
+        string stringConexao = "Server=localhost; Port=5432; " +
+                     "User Id=postgres; Password=12345678; DataBase=CarRental;";
+
+        // objeto de conexao
+        NpgsqlConnection con = new NpgsqlConnection(stringConexao);
+
+        DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+
+        int linhaSelecionada = int.Parse(dr["codigo"].ToString());
+
+        // instrucao sql para o banco de dados
+        string instrucao = $"delete from veiculo where codigo =" + linhaSelecionada;
+
+
+        NpgsqlCommand cmd = new NpgsqlCommand(instrucao, con);
+
+
+        con.Open();
+
+
+        try
         {
-            InitializeComponent();
+            //executar comando
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Registro excluído com sucesso!");
+            Close();
         }
-
-        private void Delete()
+        catch (Exception ex)
         {
-            string stringConexao = "Server=localhost; Port=5432; " +
-                         "User Id=postgres; Password=12345678; DataBase=CarRental;";
-
-            // objeto de conexao
-            NpgsqlConnection con = new NpgsqlConnection(stringConexao);
-
-            DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-
-            int linhaSelecionada = int.Parse(dr["codigo"].ToString());
-
-            // instrucao sql para o banco de dados
-            string instrucao = $"delete from veiculo where codigo =" + linhaSelecionada;
-
-
-            NpgsqlCommand cmd = new NpgsqlCommand(instrucao, con);
-
-
-            con.Open();
-
-
-            try
-            {
-                //executar comando
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro excluído com sucesso!");
-                Close();
-            }
-            catch (Exception ex)
-            {
-                // se ocorrer erro da uma msg
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                //fecha a conexao
-                con.Close(); con.Dispose();
-            }
+            // se ocorrer erro da uma msg
+            MessageBox.Show(ex.Message);
         }
-
-        private void btn_Cadastrar_Click(object sender, EventArgs e)
+        finally
         {
-            Formulario_Veiculos form = new Formulario_Veiculos();
-            form.ShowDialog();
+            //fecha a conexao
+            con.Close(); con.Dispose();
         }
+    }
 
-        private void Veiculos_Load(object sender, EventArgs e)
+    private void btn_Cadastrar_Click(object sender, EventArgs e)
+    {
+        Formulario_Veiculos form = new Formulario_Veiculos();
+        form.ShowDialog();
+    }
+    private async Task CarregarClientes()
+    {
+        try
         {
+            HttpClient _httpClient = new HttpClient(); // objeto de retorno
 
-            // string de conexao
-            string stringConexao = "Server=localhost; Port=5432; " +
-                                "User Id=postgres; Password=12345678; DataBase=CarRental;";
+            HttpResponseMessage response = await _httpClient.GetAsync("https://localhost:7188/Veiculo"); // indicar endereço endpoint/controller
+            response.EnsureSuccessStatusCode(); // padroniza os codigos
 
-            // objeto de conexao
-            NpgsqlConnection con = new NpgsqlConnection(stringConexao);
+            string responseBody = await response.Content.ReadAsStringAsync(); // executar e traz a resposta
 
-            // instrucao sql para o banco de dados
-            string instrucao = "SELECT * FROM veiculo " +
-                "order by codigo";
+            List<Veiculo_Response> cliente = JsonConvert.DeserializeObject<List<Veiculo_Response>>(responseBody); // transformo o resultado
 
-            DataTable dt = new DataTable(); // tabela virtual pra armazenar resultado
-
-            NpgsqlCommand cmd = new NpgsqlCommand(instrucao, con); // passa por parametro a instrucao sql
-
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd); // nunca muda
-
-            da.Fill(dt); // preenche data table com resultado
-
-            // Fecha conexao com o banco
-            con.Close();
-            con.Dispose();
-
-            dataGridView1.DataSource = dt; // carrega na lista da tela
+            dataGridView1.DataSource = cliente; // carrega na lista da tela
         }
+        catch
+        {
+        }
+    }
+    private void Veiculos_Load(object sender, EventArgs e)
+    {
+        CarregarClientes();
+
+        /* // string de conexao
+         string stringConexao = "Server=localhost; Port=5432; " +
+                             "User Id=postgres; Password=12345678; DataBase=CarRental;";
+
+         // objeto de conexao
+         NpgsqlConnection con = new NpgsqlConnection(stringConexao);
+
+         // instrucao sql para o banco de dados
+         string instrucao = "SELECT * FROM veiculo " +
+             "order by codigo";
+
+         DataTable dt = new DataTable(); // tabela virtual pra armazenar resultado
+
+         NpgsqlCommand cmd = new NpgsqlCommand(instrucao, con); // passa por parametro a instrucao sql
+
+         NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd); // nunca muda
+
+         da.Fill(dt); // preenche data table com resultado
+
+         // Fecha conexao com o banco
+         con.Close();
+         con.Dispose();
+
+         dataGridView1.DataSource = dt; // carrega na lista da tela*/
+     }
 
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
@@ -150,5 +163,5 @@ namespace Car_Rental
         {
 
         }
-    }
+    
 }
