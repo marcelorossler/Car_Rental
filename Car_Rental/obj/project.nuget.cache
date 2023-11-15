@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "AQSMZX6FEyXkBkuFnDafTdpufzKIQycnuSjvMUaqDvvgP9aJ8cxI66/LIQZhECRSYPLuHHPzRHJVw2LAD4ptFA==",
+  "dgSpecHash": "f4tYfZqNOwiNQMyOKrG3eLc6EPHBRxWAC3fnelUcKkOLQu+6/H377fmMoqYfjC/P0UR1XNcMUtupT8Y0zTSXYw==",
   "success": true,
   "projectFilePath": "C:\\MarceloRossler\\Car_Rental\\Car_Rental\\Car_Rental.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],

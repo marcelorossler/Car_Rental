@@ -81,3 +81,4 @@ C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\refint\Car_Rent
 C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\Car_Rental.pdb
 C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\Car_Rental.genruntimeconfig.cache
 C:\MarceloRossler\Car_Rental\Car_Rental\obj\Debug\net6.0-windows\ref\Car_Rental.dll
+C:\MarceloRossler\Car_Rental\Car_Rental\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
