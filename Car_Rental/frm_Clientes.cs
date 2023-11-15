@@ -77,7 +77,7 @@ namespace Car_Rental
         {
             CarregarCliente();
 
-            /*// string de conexao
+            // string de conexao
             string stringConexao = "Server=localhost; Port=5432; " +
                                 "User Id=postgres; Password=12345678; DataBase=CarRental;";
 
@@ -96,11 +96,11 @@ namespace Car_Rental
 
             da.Fill(dt); // preenche data table com resultado
 
-            // Fecha conexao com o banco
+           // Fecha conexao com o banco
             con.Close();
             con.Dispose();
 
-            dataGridView1.DataSource = dt; // carrega na lista da tela */
+            dataGridView1.DataSource = dt; // carrega na lista da tela 
         }
 
         private void btn_Excluir_Click(object sender, EventArgs e)
